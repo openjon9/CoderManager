@@ -1,21 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.coder.codermanager.MainActivity">
+    android:background="#e9f0f9"
+    android:padding="16dp"
+    android:scrollbars="none"
+    tools:context="com.coder.codermanager.Activity.MainActivity">
 
-    <WebView
-        android:id="@+id/webview"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"></WebView>
+        android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/homelist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-</LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_home" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="首頁"
+                    android:textColor="#000"
+                    android:textSize="30dp" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_bome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#b6d1f2"
+            android:onClick="btn_bome"
+            android:text="首頁資訊" />
+
+        <Button
+            android:id="@+id/btn_todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_todo"
+            android:text="代辦事項" />
+
+        <Button
+            android:id="@+id/btn_PM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_PM"
+            android:text="PM管理事項" />
+
+
+        <Button
+            android:id="@+id/btn_tested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_tested"
+            android:text="待測試事項" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_tag_faces" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="客戶管理"
+                    android:textColor="#000"
+                    android:textSize="30dp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_Customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_Customer"
+            android:text="客戶管理" />
+
+        <Button
+            android:id="@+id/btn_Contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_Contact"
+            android:text="聯絡人管理" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/ic_folder_black"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="專案管理"
+                    android:textColor="#000"
+                    android:textSize="30dp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_Project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_Project"
+            android:text="專案" />
+
+
+        <Button
+            android:id="@+id/btn_Todomanagment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_Todomanagment"
+            android:text="代辦事項管理" />
+
+        <Button
+            android:id="@+id/btn_worklog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:onClick="btn_worklog"
+            android:text="工作日誌" />
+
+    </LinearLayout>
+</ScrollView>

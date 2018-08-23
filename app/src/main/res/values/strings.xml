@@ -1,3 +1,58 @@
 <resources>
     <string name="app_name">CoderManager</string>
+
+
+    <string-array name="select">
+        <item>請選擇</item>
+        <item>名稱</item>
+        <item>預估工時</item>
+        <item>主機資料</item>
+        <item>備註</item>
+        <item>IP</item>
+        <item>最後管理者</item>
+    </string-array>
+
+
+    <string-array name="statrt_time">
+        <item>開始時間</item>
+        <item>完成時間</item>
+        <item>建立時間</item>
+        <item>最後修改時間</item>
+    </string-array>
+
+    <string-array name="client">
+        <item>客戶1</item>
+        <item>客戶3</item>
+        <item>客戶2</item>
+        <item>客戶4</item>
+    </string-array>
+
+    <string-array name="client_window">
+        <item>p1</item>
+        <item>p3</item>
+        <item>p2</item>
+        <item>p4</item>
+    </string-array>
+
+    <string-array name="project_leader">
+        <item>a1</item>
+        <item>a3</item>
+        <item>a2</item>
+        <item>a4</item>
+    </string-array>
+
+    <string-array name="project_execution">
+        <item>b1</item>
+        <item>b3</item>
+        <item>b2</item>
+        <item>b4</item>
+    </string-array>
+
+    <string-array name="tester">
+        <item>t1</item>
+        <item>t3</item>
+        <item>t2</item>
+        <item>t4</item>
+    </string-array>
+
 </resources>
