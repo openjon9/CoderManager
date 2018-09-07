@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.coder.codermanager.ProToActivity">
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="名稱:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="客戶:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="客戶窗口:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="專案負責人:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="專案執行:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="測試者:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="專案狀態:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="專案類型:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="執行內容:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="相關技術:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="代辦數量:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="代辦BUG:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="最後修改時間:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="最後管理者:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+</LinearLayout>

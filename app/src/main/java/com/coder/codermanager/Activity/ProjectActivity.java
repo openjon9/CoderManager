@@ -1,8 +1,10 @@
-package com.coder.codermanager;
+package com.coder.codermanager.Activity;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -10,7 +12,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+
+import com.coder.codermanager.Adapter.ProjectAdapter;
+import com.coder.codermanager.Data.ProData;
+import com.coder.codermanager.R;
+
 import net.cachapa.expandablelayout.ExpandableLinearLayout;
+
+import java.util.ArrayList;
 
 public class ProjectActivity extends AppCompatActivity {
 
@@ -20,6 +29,9 @@ public class ProjectActivity extends AppCompatActivity {
     private LinearLayout linear;
     private ExpandableLinearLayout expandableLayout;
     private Boolean isopen = false;
+    private RecyclerView pro_recyclerview;
+    private ProjectAdapter mAdapter;
+    private ArrayList<ProData> myDataset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +40,25 @@ public class ProjectActivity extends AppCompatActivity {
         context = this;
         setTitle("專案");
         findview();
+        setRecyclerview();
         initEvent();
+
+    }
+
+    private void setRecyclerview() {
+        myDataset = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            myDataset.add(new ProData(String.valueOf(i)));
+        }
+
+        mAdapter = new ProjectAdapter(context, myDataset);
+
+        //方向一定要設才有效果
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        pro_recyclerview.setLayoutManager(layoutManager);
+
+        pro_recyclerview.setAdapter(mAdapter);
     }
 
     private void initEvent() {
@@ -48,7 +78,9 @@ public class ProjectActivity extends AppCompatActivity {
 
             }
         });
+
     }
+
 
     @Override
     protected void onResume() {
@@ -101,7 +133,8 @@ public class ProjectActivity extends AppCompatActivity {
         ed_pro = (EditText) findViewById(R.id.ed_pro);
         image_up = (ImageView) findViewById(R.id.image_up);
         linear = (LinearLayout) findViewById(R.id.linear);
-        expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);
+        expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);//伸縮
+        pro_recyclerview = (RecyclerView) findViewById(R.id.pro_recyclerview);
 
     }
 

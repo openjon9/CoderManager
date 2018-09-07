@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.ProjectActivity">
+    tools:context="com.coder.codermanager.Activity.ProjectActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,10 +71,14 @@
                     android:entries="@array/select"></Spinner>
 
 
-                <EditText
+                <com.coder.codermanager.EditTextWithDel
                     android:id="@+id/ed_pro"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:ellipsize="end"
+                    android:padding="5dp"
+                    android:singleLine="true" />
 
             </LinearLayout>
 
@@ -183,7 +187,12 @@
                 <EditText
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5" />
+                    android:layout_weight="0.5"
+                    android:background="@drawable/bg_edittext"
+                    android:ellipsize="end"
+                    android:hint="這邊設日期"
+                    android:padding="4dp"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -195,15 +204,56 @@
                 <EditText
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5" />
+                    android:layout_weight="0.5"
+                    android:background="@drawable/bg_edittext"
+                    android:ellipsize="end"
+                    android:hint="這邊設日期"
+                    android:padding="4dp"
+                    android:singleLine="true" />
 
             </LinearLayout>
         </LinearLayout>
     </net.cachapa.expandablelayout.ExpandableLinearLayout>
 
-    <ListView
-        android:id="@+id/list"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="0.1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="ID" />
+
+        <TextView
+            android:layout_weight="0.4"
+            android:layout_width="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:text="名稱" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="圖片" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="客戶" />
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pro_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

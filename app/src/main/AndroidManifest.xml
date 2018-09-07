@@ -18,10 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.LoginActivity" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Activity.HomeActivity" />
         <activity android:name=".Activity.TodoActivity" />
-        <activity android:name=".ProjectActivity"></activity>
+        <activity
+            android:name=".Activity.ProjectActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ProToActivity"></activity>
     </application>
 
 </manifest>
