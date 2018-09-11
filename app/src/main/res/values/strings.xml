@@ -55,4 +55,13 @@
         <item>t4</item>
     </string-array>
 
+    <string-array name="workrecord_selete">
+        <item>請選擇</item>
+        <item>姓名</item>
+    </string-array>
+
+    <string-array name="workrecord_time">
+        <item>時間</item>
+    </string-array>
+
 </resources>

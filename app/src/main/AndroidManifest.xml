@@ -26,7 +26,8 @@
         <activity
             android:name=".Activity.ProjectActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".ProToActivity"></activity>
+        <activity android:name=".ProToActivity" />
+        <activity android:name=".workRecordActivity"></activity>
     </application>
 
 </manifest>

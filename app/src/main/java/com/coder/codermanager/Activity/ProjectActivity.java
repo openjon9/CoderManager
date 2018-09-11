@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
-import com.coder.codermanager.Adapter.ProjectAdapter;
+import com.coder.codermanager.Adapter.ProjectListAdapter;
 import com.coder.codermanager.Data.ProData;
 import com.coder.codermanager.R;
 
@@ -30,7 +30,7 @@ public class ProjectActivity extends AppCompatActivity {
     private ExpandableLinearLayout expandableLayout;
     private Boolean isopen = false;
     private RecyclerView pro_recyclerview;
-    private ProjectAdapter mAdapter;
+    private ProjectListAdapter mAdapter;
     private ArrayList<ProData> myDataset;
 
     @Override
@@ -51,7 +51,7 @@ public class ProjectActivity extends AppCompatActivity {
             myDataset.add(new ProData(String.valueOf(i)));
         }
 
-        mAdapter = new ProjectAdapter(context, myDataset);
+        mAdapter = new ProjectListAdapter(context, myDataset);
 
         //方向一定要設才有效果
         final LinearLayoutManager layoutManager = new LinearLayoutManager(context);

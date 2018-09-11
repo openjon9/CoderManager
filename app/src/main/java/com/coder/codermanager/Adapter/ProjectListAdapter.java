@@ -4,14 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.coder.codermanager.Data.ProData;
 import com.coder.codermanager.ProToActivity;
@@ -23,14 +20,14 @@ import java.util.List;
  * Created by Rey on 2018/9/6.
  */
 
-public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHolder> {
+public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
 
     private Context context;
     private List<ProData> mData;
 
     @NonNull
     @Override
-    public ProjectAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {   //取得layout
+    public ProjectListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {   //取得layout
 
         View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.projectitem, parent, false);
         ViewHolder vh = new ViewHolder(mView); //layout設定給ViewHolder
@@ -38,7 +35,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
         return vh;
     }
 
-    public ProjectAdapter(Context context, List<ProData> mData) {
+    public ProjectListAdapter(Context context, List<ProData> mData) {
         this.mData = mData;
         this.context = context;
     }
@@ -46,7 +43,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
     private String TAG = "HomeList";
 
     @Override
-    public void onBindViewHolder(@NonNull ProjectAdapter.ViewHolder holder, final int position) { //設定元件裡的事件
+    public void onBindViewHolder(@NonNull ProjectListAdapter.ViewHolder holder, final int position) { //設定元件裡的事件
         holder.text_id.setText(mData.get(position).getID());
         holder.text_name.setText(mData.get(position).getName());
         holder.text_client.setText(mData.get(position).getClient());

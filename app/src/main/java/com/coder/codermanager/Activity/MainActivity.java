@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.coder.codermanager.R;
+import com.coder.codermanager.workRecordActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     //工作日誌
     public void btn_worklog(View view) {
-
+        Intent intent = new Intent(context, workRecordActivity.class);
+        startActivity(intent);
     }
 }
