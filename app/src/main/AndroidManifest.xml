@@ -21,13 +21,14 @@
         <activity
             android:name=".Activity.LoginActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".Activity.HomeActivity" />
-        <activity android:name=".Activity.TodoActivity" />
+        <activity android:name=".Activity.Home.homeHomeActivity" />
+        <activity android:name=".Activity.Home.homeTodoActivity" />
         <activity
-            android:name=".Activity.ProjectActivity"
+            android:name=".Activity.Pro.proProjectActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".ProToActivity" />
-        <activity android:name=".workRecordActivity"></activity>
+        <activity android:name=".Activity.Pro.proProjectClickActivity" />
+        <activity android:name=".Activity.Pro.proWorkActivity" />
+        <activity android:name=".proTodoActivity"></activity>
     </application>
 
 </manifest>

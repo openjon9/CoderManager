@@ -77,6 +77,8 @@ public class EditTextWithDel extends android.support.v7.widget.AppCompatEditText
             Rect rect = new Rect();
             getGlobalVisibleRect(rect);
             rect.left = rect.right - 100;
+          //  Log.d(TAG,"rect:"+rect);
+
             if (rect.contains(eventX, eventY))
                 setText("");
         }

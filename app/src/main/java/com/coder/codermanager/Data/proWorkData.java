@@ -4,7 +4,7 @@ package com.coder.codermanager.Data;
  * Created by Rey on 2018/9/11.
  */
 
-public class workRecordData {
+public class proWorkData {
 
     private String id;
     private String Name = "Egg";
@@ -13,7 +13,7 @@ public class workRecordData {
     private String projectItem = "個人設定版面修改";
     private String Remarks = "備註測試123456789987546123168498";//備註
 
-    public workRecordData(String id) {
+    public proWorkData(String id) {
         this.id = id;
     }
 

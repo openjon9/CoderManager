@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.coder.codermanager.Data.ProData;
-import com.coder.codermanager.ProToActivity;
+import com.coder.codermanager.Data.proProjectData;
+import com.coder.codermanager.Activity.Pro.proProjectClickActivity;
 import com.coder.codermanager.R;
 
 import java.util.List;
@@ -20,22 +20,22 @@ import java.util.List;
  * Created by Rey on 2018/9/6.
  */
 
-public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
+public class proProjectListAdapter extends RecyclerView.Adapter<proProjectListAdapter.ViewHolder> {
 
     private Context context;
-    private List<ProData> mData;
+    private List<proProjectData> mData;
 
     @NonNull
     @Override
-    public ProjectListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {   //取得layout
+    public proProjectListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {   //取得layout
 
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.projectitem, parent, false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.proprojectitem_1, parent, false);
         ViewHolder vh = new ViewHolder(mView); //layout設定給ViewHolder
 
         return vh;
     }
 
-    public ProjectListAdapter(Context context, List<ProData> mData) {
+    public proProjectListAdapter(Context context, List<proProjectData> mData) {
         this.mData = mData;
         this.context = context;
     }
@@ -43,7 +43,7 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
     private String TAG = "HomeList";
 
     @Override
-    public void onBindViewHolder(@NonNull ProjectListAdapter.ViewHolder holder, final int position) { //設定元件裡的事件
+    public void onBindViewHolder(@NonNull proProjectListAdapter.ViewHolder holder, final int position) { //設定元件裡的事件
         holder.text_id.setText(mData.get(position).getID());
         holder.text_name.setText(mData.get(position).getName());
         holder.text_client.setText(mData.get(position).getClient());
@@ -60,7 +60,7 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
             @Override
             public void onClick(View view) {
                 // Toast.makeText(context, position + "", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context, ProToActivity.class);
+                Intent intent = new Intent(context, proProjectClickActivity.class);
                 context.startActivity(intent);
 
             }

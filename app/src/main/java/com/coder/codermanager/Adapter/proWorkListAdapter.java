@@ -1,19 +1,18 @@
 package com.coder.codermanager.Adapter;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupWindow;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-import com.coder.codermanager.Data.workRecordData;
+import com.coder.codermanager.Data.proWorkData;
 import com.coder.codermanager.R;
 
 import java.util.List;
@@ -22,13 +21,14 @@ import java.util.List;
  * Created by Rey on 2018/9/11.
  */
 
-public class workRecordListAdapter extends RecyclerView.Adapter<workRecordListAdapter.ViewHolder> {
+public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.ViewHolder> {
 
 
     private Context context;
-    private List<workRecordData> mData;
+    private List<proWorkData> mData;
+    private AlertDialog mdialog;
 
-    public workRecordListAdapter(Context context, List<workRecordData> mData) {
+    public proWorkListAdapter(Context context, List<proWorkData> mData) {
         this.context = context;
         this.mData = mData;
     }
@@ -36,8 +36,8 @@ public class workRecordListAdapter extends RecyclerView.Adapter<workRecordListAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.workrecorditem, parent, false);
-        workRecordListAdapter.ViewHolder vh = new workRecordListAdapter.ViewHolder(mView); //layout設定給ViewHolder
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.proworkitem_1, parent, false);
+        proWorkListAdapter.ViewHolder vh = new proWorkListAdapter.ViewHolder(mView); //layout設定給ViewHolder
 
         return vh;
     }
@@ -57,24 +57,51 @@ public class workRecordListAdapter extends RecyclerView.Adapter<workRecordListAd
             holder.line.setVisibility(View.VISIBLE);
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+
+
             @Override
-            public void onClick(View view) {
+            public boolean onLongClick(View view) {
+                View mview = LayoutInflater.from(context).inflate(R.layout.prowork_dialog_1, null);
+                EditText ed_name = (EditText) mview.findViewById(R.id.ed_name);
+                EditText ed_time = (EditText) mview.findViewById(R.id.ed_time);
+                EditText ed_write = (EditText) mview.findViewById(R.id.ed_write);
+                Button btn_yes = (Button) mview.findViewById(R.id.btn_yes);
+                Button btn_no = (Button) mview.findViewById(R.id.btn_no);
 
 
+                mdialog = new AlertDialog.Builder(context)
+                        .setView(mview)
+                        // .setCancelable(false)
+                        .show();
 
+                btn_yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mdialog.dismiss();
+                    }
+                });
+
+                btn_no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mdialog.dismiss();
+                    }
+                });
+
+                return true;
+            }
 
 
 //                View popupView = LayoutInflater.from(context).inflate(R.layout.workrecordpopview,null,false);
 //                popupView.findViewById(R.id.text);
 //
-//                PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT  , ViewGroup.LayoutParams.WRAP_CONTENT , true);
+//                PopupWindow popupWindow = new PopupWindow(popupView,800,800,true);
 //                popupWindow.setBackgroundDrawable(new ColorDrawable(0x4e000000));
-//
-//                popupWindow.showAsDropDown(popupView);
+//                popupWindow.showAtLocation(popupView,Gravity.CENTER,0,0);
 
 
-            }
+
         });
 
     }

@@ -4,7 +4,7 @@ package com.coder.codermanager.Data;
  * Created by Rey on 2018/9/7.
  */
 
-public class ProData {
+public class proProjectData {
 
     private String ID;
     private String Name = "test";                      //名稱
@@ -24,11 +24,11 @@ public class ProData {
     private String upUser;                    //最後管理者
 
 
-    public ProData(String ID) {
+    public proProjectData(String ID) {
         this.ID = ID;
     }
 
-    public ProData() {
+    public proProjectData() {
     }
 
     public String getID() {

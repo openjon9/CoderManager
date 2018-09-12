@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.workRecordActivity">
+    tools:context="com.coder.codermanager.Activity.Pro.proWorkActivity">
 
 
     <LinearLayout
@@ -64,6 +64,7 @@
 
                 <com.coder.codermanager.EditTextWithDel
                     android:id="@+id/ed_pro"
+                    android:imeOptions="actionDone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edittext"

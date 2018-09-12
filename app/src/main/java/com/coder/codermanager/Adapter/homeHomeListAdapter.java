@@ -3,13 +3,12 @@ package com.coder.codermanager.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.coder.codermanager.Data.homeData;
+import com.coder.codermanager.Data.homeHomeData;
 import com.coder.codermanager.R;
 
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.List;
  * Created by Rey on 2018/9/7.
  */
 
-public class HomeListAdapter2 extends RecyclerView.Adapter<HomeListAdapter2.ViewHolder> {
+public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapter.ViewHolder> {
 
     public static final int TYPE_HEADER = 0;  //说明是带有Header的
     public static final int TYPE_FOOTER = 1;  //说明是带有Footer的
@@ -26,7 +25,7 @@ public class HomeListAdapter2 extends RecyclerView.Adapter<HomeListAdapter2.View
 
 
     private Context context;
-    private List<homeData> mData;
+    private List<homeHomeData> mData;
     private int itemCount = 1;
     private String TAG = "HomeList";
 
@@ -52,7 +51,7 @@ public class HomeListAdapter2 extends RecyclerView.Adapter<HomeListAdapter2.View
     }
 
 
-    public HomeListAdapter2(Context context, List<homeData> mData) {
+    public homeHomeListAdapter(Context context, List<homeHomeData> mData) {
         this.context = context;
         this.mData = mData;
     }
@@ -86,8 +85,8 @@ public class HomeListAdapter2 extends RecyclerView.Adapter<HomeListAdapter2.View
             return new ViewHolder(mFooterView);
         }
 
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.homeitem, parent, false);
-        return new HomeListAdapter2.ViewHolder(mView); //layout設定給ViewHolder
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.homehomeitem_1, parent, false);
+        return new homeHomeListAdapter.ViewHolder(mView); //layout設定給ViewHolder
     }
 
     @Override

@@ -5,8 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.coder.codermanager.Activity.Home.homeHomeActivity;
+import com.coder.codermanager.Activity.Home.homeTodoActivity;
+import com.coder.codermanager.Activity.Pro.proWorkActivity;
+import com.coder.codermanager.Activity.Pro.proProjectActivity;
+import com.coder.codermanager.Activity.Pro.proProjectClickActivity;
 import com.coder.codermanager.R;
-import com.coder.codermanager.workRecordActivity;
+import com.coder.codermanager.proTodoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
 
     //首頁資訊
     public void btn_bome(View view) {
-        Intent intent = new Intent(context, HomeActivity.class);
+        Intent intent = new Intent(context, homeHomeActivity.class);
         startActivity(intent);
     }
 
     //代辦事項
     public void btn_todo(View view) {
-        Intent intent = new Intent(context, TodoActivity.class);
+        Intent intent = new Intent(context, homeTodoActivity.class);
         startActivity(intent);
     }
 
@@ -93,18 +98,21 @@ public class MainActivity extends AppCompatActivity {
 
     //專案管理
     public void btn_Project(View view) {
-        Intent intent = new Intent(context, ProjectActivity.class);
+        Intent intent = new Intent(context, proProjectActivity.class);
         startActivity(intent);
     }
 
     //代辦事項管理
     public void btn_Todomanagment(View view) {
 
+        Intent intent = new Intent(context, proTodoActivity.class);
+        startActivity(intent);
+
     }
 
     //工作日誌
     public void btn_worklog(View view) {
-        Intent intent = new Intent(context, workRecordActivity.class);
+        Intent intent = new Intent(context, proWorkActivity.class);
         startActivity(intent);
     }
 }

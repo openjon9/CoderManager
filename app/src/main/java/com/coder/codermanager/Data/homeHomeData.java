@@ -4,7 +4,7 @@ package com.coder.codermanager.Data;
  * Created by Rey on 2018/8/22.
  */
 
-public class homeData {
+public class homeHomeData {
 
     private String UnDate = "123";
     private String proName = "123456";

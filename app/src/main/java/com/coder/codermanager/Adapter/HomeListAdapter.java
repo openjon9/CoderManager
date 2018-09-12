@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.coder.codermanager.Data.homeData;
+import com.coder.codermanager.Data.homeHomeData;
 import com.coder.codermanager.Activity.MainActivity;
 import com.coder.codermanager.R;
 
@@ -23,21 +23,21 @@ public class HomeListAdapter extends BaseAdapter {
 
     private ArrayList<String> mtitle;
     Context context;
-    List<homeData> mList = new ArrayList<>();
+    List<homeHomeData> mList = new ArrayList<>();
     private int mSelect;
     private int itemCount = 1;
     public static final int TYPE_TITLE = 0;
     public static final int TYPE_COMPANY = 1;
     private String TAG = "listAdapter";
 
-    public HomeListAdapter(MainActivity context, ArrayList<homeData> mlist, ArrayList<String> listTitle) {
+    public HomeListAdapter(MainActivity context, ArrayList<homeHomeData> mlist, ArrayList<String> listTitle) {
 
         this.context = context;
         this.mList = mlist;
         this.mtitle = listTitle;
     }
 
-    public HomeListAdapter(Context context, List<homeData> mList) {
+    public HomeListAdapter(Context context, List<homeHomeData> mList) {
         this.context = context;
         this.mList = mList;
     }
@@ -97,7 +97,7 @@ public class HomeListAdapter extends BaseAdapter {
         if (convertView == null) {
             myTag = new MyTag();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.homeitem, null);
+            convertView = inflater.inflate(R.layout.homehomeitem_1, null);
             myTag.proName = (TextView) convertView.findViewById(R.id.proName);
             myTag.UnNumber = (TextView) convertView.findViewById(R.id.UnNumber);
             myTag.timeOutNumber = (TextView) convertView.findViewById(R.id.timeOutNumber);

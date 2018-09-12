@@ -1,4 +1,4 @@
-package com.coder.codermanager.Activity;
+package com.coder.codermanager.Activity.Home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,29 +7,27 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.coder.codermanager.Adapter.HomeListAdapter;
-import com.coder.codermanager.Adapter.HomeListAdapter2;
-import com.coder.codermanager.Data.homeData;
+import com.coder.codermanager.Adapter.homeHomeListAdapter;
+import com.coder.codermanager.Data.homeHomeData;
 import com.coder.codermanager.R;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class homeHomeActivity extends AppCompatActivity {
 
     private RecyclerView homeRecyclerView;
     private HomeListAdapter homeAdapter;
-    private HomeActivity context;
-    private ArrayList<homeData> mlist;
+    private homeHomeActivity context;
+    private ArrayList<homeHomeData> mlist;
     private ImageView down_image;
-    private HomeListAdapter2 mAdapter;
+    private homeHomeListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_home);
         context = this;
         setTitle("首頁");
         findview();
@@ -42,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setRecyclerview() {
-        mAdapter = new HomeListAdapter2(context, mlist);
+        mAdapter = new homeHomeListAdapter(context, mlist);
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -57,18 +55,18 @@ public class HomeActivity extends AppCompatActivity {
     private void initData() {
         mlist = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
-            mlist.add(new homeData());
+            mlist.add(new homeHomeData());
         }
     }
 
 
     private void setHeaderView(RecyclerView view) {
-        View header = LayoutInflater.from(this).inflate(R.layout.homeitem2, view, false);
+        View header = LayoutInflater.from(this).inflate(R.layout.homehomeitem_2, view, false);
         mAdapter.setmHeaderView(header);
     }
 
     private void setFooterView(RecyclerView view) {
-        View footer = LayoutInflater.from(this).inflate(R.layout.homeitem2, view, false);
+        View footer = LayoutInflater.from(this).inflate(R.layout.homehomeitem_2, view, false);
         mAdapter.setmFooterView(footer);
     }
 

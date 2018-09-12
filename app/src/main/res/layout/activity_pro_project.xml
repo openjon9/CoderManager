@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.Activity.ProjectActivity">
+    tools:context="com.coder.codermanager.Activity.Pro.proProjectActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,6 +77,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"
+                    android:imeOptions="actionDone"
                     android:padding="5dp"
                     android:singleLine="true" />
 
@@ -218,34 +219,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <TextView
-            android:layout_weight="0.1"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.1"
             android:text="ID" />
 
         <TextView
-            android:layout_weight="0.4"
             android:layout_width="0dp"
-            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.4"
             android:text="名稱" />
 
         <TextView
             android:layout_width="50dp"
-            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="圖片" />
 
         <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_weight="0.3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.3"
             android:text="客戶" />
 
 
