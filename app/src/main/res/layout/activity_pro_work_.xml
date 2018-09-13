@@ -52,23 +52,23 @@
             app:layout_expandable="true">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <LinearLayout style="@style/linear2">
 
                 <Spinner
+                    android:id="@+id/pro_work_selete"
+                    style="@style/spinner_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:entries="@array/workrecord_selete"></Spinner>
+                    android:entries="@array/pro_work_selete"></Spinner>
 
                 <com.coder.codermanager.EditTextWithDel
-                    android:id="@+id/ed_pro"
-                    android:imeOptions="actionDone"
+                    android:id="@+id/ed_work"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"
+                    android:imeOptions="actionDone"
                     android:padding="5dp"
                     android:singleLine="true" />
 
@@ -76,19 +76,21 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                style="@style/linear2"
+                android:layout_marginTop="5dp">
 
                 <Spinner
+                    android:id="@+id/pro_work_time"
+                    style="@style/spinner_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:entries="@array/workrecord_time"></Spinner>
+                    android:entries="@array/pro_work_time"></Spinner>
 
 
                 <EditText
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"
@@ -161,7 +163,7 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/workrecord_recyclerview"
+        android:id="@+id/pro_work_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 

@@ -1,21 +1,20 @@
-package com.coder.codermanager.Activity.Pro;
+package com.coder.codermanager.Activity.Home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.coder.codermanager.R;
 
-public class proProjectClickActivity extends AppCompatActivity {
+public class homePmClickActivity extends AppCompatActivity {
 
-    private proProjectClickActivity context;
+    private homePmClickActivity context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pro_project_click);
+        setContentView(R.layout.activity_home_pm_click);
 
         context = this;
-        setTitle("代辦事項管理");
         findview();
     }
 

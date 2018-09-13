@@ -36,7 +36,7 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.proworkitem_1, parent, false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pro_work_item_1, parent, false);
         proWorkListAdapter.ViewHolder vh = new proWorkListAdapter.ViewHolder(mView); //layout設定給ViewHolder
 
         return vh;
@@ -93,7 +93,7 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
             }
 
 
-//                View popupView = LayoutInflater.from(context).inflate(R.layout.workrecordpopview,null,false);
+//                View popupView = LayoutInflater.from(context).inflate(R.layout.popviewtest,null,false);
 //                popupView.findViewById(R.id.text);
 //
 //                PopupWindow popupWindow = new PopupWindow(popupView,800,800,true);

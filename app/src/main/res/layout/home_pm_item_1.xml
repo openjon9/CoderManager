@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/home_pm_id"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:singleLine="true"
+            android:text="ID" />
+
+        <TextView
+            android:id="@+id/home_pm_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:singleLine="true"
+            android:text="優先" />
+
+        <TextView
+            android:id="@+id/home_pm_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:text="狀態" />
+
+        <TextView
+            android:id="@+id/home_pm_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:singleLine="true"
+            android:text="專案" />
+
+        <TextView
+            android:id="@+id/home_pm_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:singleLine="true"
+            android:text="標題" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f000" />
+
+</LinearLayout>

@@ -5,23 +5,16 @@ import android.os.Bundle;
 
 import com.coder.codermanager.R;
 
-public class proProjectClickActivity extends AppCompatActivity {
+public class proTodoClickActivity extends AppCompatActivity {
 
-    private proProjectClickActivity context;
+    private proTodoClickActivity context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pro_project_click);
+        setContentView(R.layout.activity_pro_todo_click);
 
         context = this;
-        setTitle("代辦事項管理");
-        findview();
-    }
-
-    private void findview() {
 
     }
-
-
 }

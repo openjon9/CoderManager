@@ -29,7 +29,7 @@ public class proProjectListAdapter extends RecyclerView.Adapter<proProjectListAd
     @Override
     public proProjectListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {   //取得layout
 
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.proprojectitem_1, parent, false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pro_project_item_1, parent, false);
         ViewHolder vh = new ViewHolder(mView); //layout設定給ViewHolder
 
         return vh;

@@ -61,12 +61,12 @@ public class homeHomeActivity extends AppCompatActivity {
 
 
     private void setHeaderView(RecyclerView view) {
-        View header = LayoutInflater.from(this).inflate(R.layout.homehomeitem_2, view, false);
+        View header = LayoutInflater.from(this).inflate(R.layout.home_home_item_2, view, false);
         mAdapter.setmHeaderView(header);
     }
 
     private void setFooterView(RecyclerView view) {
-        View footer = LayoutInflater.from(this).inflate(R.layout.homehomeitem_2, view, false);
+        View footer = LayoutInflater.from(this).inflate(R.layout.home_home_item_2, view, false);
         mAdapter.setmFooterView(footer);
     }
 

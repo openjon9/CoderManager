@@ -35,15 +35,15 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
     public View getmFooterView() {
         return mFooterView;
     }
+    public View getmHeaderView() {
+        return mHeaderView;
+    }
 
     public void setmFooterView(View mFooterView) {
         this.mFooterView = mFooterView;
         notifyItemInserted(getItemCount() - 1);//放最後面
     }
 
-    public View getmHeaderView() {
-        return mHeaderView;
-    }
 
     public void setmHeaderView(View mHeaderView) {
         this.mHeaderView = mHeaderView;
@@ -85,7 +85,7 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
             return new ViewHolder(mFooterView);
         }
 
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.homehomeitem_1, parent, false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_home_item_1, parent, false);
         return new homeHomeListAdapter.ViewHolder(mView); //layout設定給ViewHolder
     }
 

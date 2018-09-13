@@ -97,7 +97,7 @@ public class HomeListAdapter extends BaseAdapter {
         if (convertView == null) {
             myTag = new MyTag();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.homehomeitem_1, null);
+            convertView = inflater.inflate(R.layout.home_home_item_1, null);
             myTag.proName = (TextView) convertView.findViewById(R.id.proName);
             myTag.UnNumber = (TextView) convertView.findViewById(R.id.UnNumber);
             myTag.timeOutNumber = (TextView) convertView.findViewById(R.id.timeOutNumber);

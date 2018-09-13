@@ -1,27 +1,25 @@
-package com.coder.codermanager.Activity.Pro;
+package com.coder.codermanager.Activity.Client;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.coder.codermanager.R;
 
-public class proProjectClickActivity extends AppCompatActivity {
+public class clientContactPersonClickActivity extends AppCompatActivity {
 
-    private proProjectClickActivity context;
+    private clientContactPersonClickActivity context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pro_project_click);
-
+        setContentView(R.layout.activity_client_contact_person_click);
         context = this;
-        setTitle("代辦事項管理");
         findview();
+
     }
 
     private void findview() {
 
     }
-
 
 }

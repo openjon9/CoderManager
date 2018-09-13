@@ -9,8 +9,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustPan">
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,17 +20,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity.LoginActivity"
-            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.Home.homeHomeActivity" />
         <activity android:name=".Activity.Home.homeTodoActivity" />
-        <activity
-            android:name=".Activity.Pro.proProjectActivity"
-            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Activity.Pro.proProjectActivity" />
         <activity android:name=".Activity.Pro.proProjectClickActivity" />
         <activity android:name=".Activity.Pro.proWorkActivity" />
-        <activity android:name=".proTodoActivity"></activity>
+        <activity android:name=".Activity.Pro.proTodoActivity" />
+        <activity android:name=".Activity.Pro.proTodoClickActivity" />
+        <activity android:name=".Activity.Client.clientClientActivity" />
+        <activity android:name=".Activity.Client.clientClientClickActivity" />
+        <activity android:name=".Activity.Client.clientContactPersonActivity" />
+        <activity android:name=".Activity.Client.clientContactPersonClickActivity" />
+        <activity android:name=".Test.TestActivity" />
+        <activity android:name=".Activity.Home.homePMActivity" />
+        <activity android:name=".Activity.Home.homePmClickActivity" />
+        <activity android:name=".homePendingTestActivity"></activity>
     </application>
 
 </manifest>

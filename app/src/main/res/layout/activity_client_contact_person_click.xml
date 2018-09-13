@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.coder.codermanager.Activity.Client.clientContactPersonClickActivity">
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="ID:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="公司:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="帳號:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="姓名:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="職稱:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="連絡電話:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="手機:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="EMAIL:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="最後修改時間:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            style="@style/MyText"
+            android:text="最後管理者:" />
+
+        <TextView
+            style="@style/MyText2"
+            android:text="123" />
+    </LinearLayout>
+
+</LinearLayout>

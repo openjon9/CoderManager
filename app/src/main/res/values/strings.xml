@@ -2,7 +2,9 @@
     <string name="app_name">CoderManager</string>
 
 
-    <string-array name="select">
+    /**************pro_project*****************/
+
+    <string-array name="pro_project_select">
         <item>請選擇</item>
         <item>名稱</item>
         <item>預估工時</item>
@@ -13,55 +15,152 @@
     </string-array>
 
 
-    <string-array name="statrt_time">
+    <string-array name="pro_project_statrt_time">
         <item>開始時間</item>
         <item>完成時間</item>
         <item>建立時間</item>
         <item>最後修改時間</item>
     </string-array>
 
-    <string-array name="client">
+    <array name="pro_project_time">
+        <item>開始時間</item>
+        <item>完成時間</item>
+        <item>建立時間</item>
+        <item>最後修改時間</item>
+    </array>
+
+    <string-array name="pro_project_client">
         <item>客戶1</item>
         <item>客戶3</item>
         <item>客戶2</item>
         <item>客戶4</item>
     </string-array>
 
-    <string-array name="client_window">
+    <string-array name="pro_project_client_window">
         <item>p1</item>
         <item>p3</item>
         <item>p2</item>
         <item>p4</item>
     </string-array>
 
-    <string-array name="project_leader">
+    <string-array name="pro_project_leader">
         <item>a1</item>
         <item>a3</item>
         <item>a2</item>
         <item>a4</item>
     </string-array>
 
-    <string-array name="project_execution">
+    <string-array name="pro_project_execution">
         <item>b1</item>
         <item>b3</item>
         <item>b2</item>
         <item>b4</item>
     </string-array>
 
-    <string-array name="tester">
+    <string-array name="pro_project_tester">
         <item>t1</item>
         <item>t3</item>
         <item>t2</item>
         <item>t4</item>
     </string-array>
 
-    <string-array name="workrecord_selete">
+    /**************pro_work**************/
+    <string-array name="pro_work_selete">
         <item>請選擇</item>
         <item>姓名</item>
     </string-array>
 
-    <string-array name="workrecord_time">
+    <string-array name="pro_work_time">
         <item>時間</item>
     </string-array>
+
+    /************pro_todo**************/
+    <string-array name="pro_todo_selete">
+
+        <item>請選擇</item>
+        <item>標題</item>
+        <item>描述</item>
+        <item>備註</item>
+        <item>IP</item>
+        <item>最後管理者</item>
+    </string-array>
+
+    <string-array name="pro_todo_project">
+        <item>不限</item>
+        <item>t1</item>
+        <item>t2</item>
+        <item>t3</item>
+    </string-array>
+
+    <string-array name="pro_todo_type">
+        <item>不限</item>
+        <item>規格</item>
+        <item>追加</item>
+        <item>修改</item>
+        <item>維護</item>
+        <item>BUG</item>
+        <item>會議記錄</item>
+    </string-array>
+
+    <string-array name="pro_todo_priority">
+        <item>不限</item>
+        <item>低</item>
+        <item>中</item>
+        <item>高</item>
+        <item>緊急</item>
+
+    </string-array>
+
+    /************clent*************/
+
+    <string-array name="clent_select">
+        <item>請選擇</item>
+        <item>名稱</item>
+        <item>發票抬頭</item>
+        <item>統編</item>
+        <item>電話</item>
+        <item>地址</item>
+        <item>備註</item>
+        <item>IP</item>
+        <item>最後管理者</item>
+
+    </string-array>
+
+    <string-array name="clent_time">
+        <item>建立時間</item>
+        <item>最後修改時間</item>
+    </string-array>
+
+
+    /************contact_person***************/
+
+    <string-array name="contact_person_select">
+
+        <item>請選擇</item>
+        <item>帳號</item>
+        <item>姓名</item>
+        <item>職稱</item>
+        <item>聯絡電話</item>
+        <item>手機</item>
+        <item>備註</item>
+        <item>IP</item>
+        <item>最後管理者</item>
+
+    </string-array>
+
+    <string-array name="contact_person_company">
+
+        <item>p1</item>
+        <item>p3</item>
+        <item>p2</item>
+        <item>p4</item>
+
+    </string-array>
+
+    <string-array name="contact_person_time">
+        <item>建立時間</item>
+        <item>最後修改時間</item>
+    </string-array>
+
 
 </resources>

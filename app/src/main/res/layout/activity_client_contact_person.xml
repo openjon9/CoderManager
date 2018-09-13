@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.Activity.Pro.proProjectActivity">
+    tools:context="com.coder.codermanager.Activity.Client.clientContactPersonActivity">
 
     <LinearLayout
 
@@ -50,28 +50,23 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_expandable="true">
 
 
-            <LinearLayout
-                style="@style/linear2"
-                android:focusable="true"
-                android:focusableInTouchMode="true">
+            <LinearLayout style="@style/linear2">
 
                 <Spinner
-                    android:id="@+id/pro_project_select"
+                    android:id="@+id/contact_person_select"
                     style="@style/spinner_style"
-                    android:layout_width="100dp"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:entries="@array/pro_project_select"></Spinner>
-
+                    android:entries="@array/contact_person_select"></Spinner>
 
                 <com.coder.codermanager.EditTextWithDel
-                    android:id="@+id/ed_pro"
+                    android:id="@+id/ed_clent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -81,101 +76,29 @@
                     android:padding="5dp"
                     android:singleLine="true" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/linear2"
-                android:layout_marginTop="5dp">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="客戶"
-                    android:textColor="#000" />
-
-                <Spinner
-                    android:id="@+id/pro_project_client"
-                    style="@style/spinner_style"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:entries="@array/pro_project_client"></Spinner>
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/linear2"
-                android:layout_marginTop="5dp">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="客戶窗口"
-                    android:textColor="#000" />
-
-                <Spinner
-                    android:id="@+id/pro_project_client_window"
-                    style="@style/spinner_style"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:entries="@array/pro_project_client_window"></Spinner>
 
             </LinearLayout>
 
             <LinearLayout
-                style="@style/linear2"
-                android:layout_marginTop="5dp">
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="專案負責人"
-                    android:textColor="#000" />
-
-                <Spinner
-                    android:id="@+id/pro_project_leader"
-                    style="@style/spinner_style"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:entries="@array/pro_project_leader"></Spinner>
-
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/linear2"
-                android:layout_marginTop="5dp">
+                style="@style/linear"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="專案執行"
-                    android:textColor="#000" />
+                    android:text="公司"
+                    android:textColor="#000"
+                    android:textSize="20dp" />
+
 
                 <Spinner
-                    android:id="@+id/pro_project_execution"
+                    android:id="@+id/contact_person_company"
                     style="@style/spinner_style"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_weight="0.8"
-                    android:entries="@array/pro_project_execution"></Spinner>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="測試者"
-                    android:textColor="#000" />
-
-                <Spinner
-                    android:id="@+id/pro_project_tester"
-                    style="@style/spinner_style"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="0.8"
-                    android:entries="@array/pro_project_tester"></Spinner>
+                    android:entries="@array/contact_person_company"></Spinner>
 
             </LinearLayout>
 
@@ -184,11 +107,12 @@
                 android:layout_marginTop="5dp">
 
                 <Spinner
-                    android:id="@+id/pro_project_start_time"
+                    android:id="@+id/contact_person_time"
                     style="@style/spinner_style"
-                    android:layout_width="100dp"
+                    android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:entries="@array/pro_project_statrt_time"></Spinner>
+                    android:entries="@array/contact_person_time"></Spinner>
+
 
                 <EditText
                     android:layout_width="100dp"
@@ -218,6 +142,11 @@
                     android:padding="4dp"
                     android:singleLine="true" />
 
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_pageview" />
+
             </LinearLayout>
         </LinearLayout>
     </net.cachapa.expandablelayout.ExpandableLinearLayout>
@@ -226,41 +155,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#4e000000"
-        android:orientation="horizontal"
-       >
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="0.1"
             android:text="ID" />
 
         <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"
+            android:text="公司" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_weight="0.4"
-            android:text="名稱" />
+            android:layout_weight="0.2"
+            android:text="帳號" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
+            android:text="姓名" />
 
         <TextView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="圖片" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_weight="0.3"
-            android:text="客戶" />
-
+            android:layout_marginRight="10dp"
+            android:text="圖片" />
 
     </LinearLayout>
 
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/pro_recyclerview"
+        android:id="@+id/contact_person_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>

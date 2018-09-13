@@ -9,9 +9,11 @@ import com.coder.codermanager.Activity.Home.homeHomeActivity;
 import com.coder.codermanager.Activity.Home.homeTodoActivity;
 import com.coder.codermanager.Activity.Pro.proWorkActivity;
 import com.coder.codermanager.Activity.Pro.proProjectActivity;
-import com.coder.codermanager.Activity.Pro.proProjectClickActivity;
 import com.coder.codermanager.R;
-import com.coder.codermanager.proTodoActivity;
+import com.coder.codermanager.Activity.Pro.proTodoActivity;
+import com.coder.codermanager.Activity.Client.clientClientActivity;
+import com.coder.codermanager.Activity.Client.clientContactPersonActivity;
+import com.coder.codermanager.Activity.Home.homePMActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,22 +80,26 @@ public class MainActivity extends AppCompatActivity {
 
     //PM管理事項
     public void btn_PM(View view) {
-
+        Intent intent = new Intent(context, homePMActivity.class);
+        startActivity(intent);
     }
 
     //待測試事項
     public void btn_tested(View view) {
-
+//        Intent intent = new Intent(context, TestActivity.class);
+//        startActivity(intent);
     }
 
     //客戶管理
     public void btn_Customer(View view) {
-
+        Intent intent = new Intent(context, clientClientActivity.class);
+        startActivity(intent);
     }
 
     //聯絡人管理
     public void btn_Contact(View view) {
-
+        Intent intent = new Intent(context, clientContactPersonActivity.class);
+        startActivity(intent);
     }
 
     //專案管理
