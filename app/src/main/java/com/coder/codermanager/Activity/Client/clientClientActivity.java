@@ -23,11 +23,11 @@ import java.util.ArrayList;
 public class clientClientActivity extends AppCompatActivity implements windowSoftInputModeInterface {
 
     private clientClientActivity context;
-    private RecyclerView clent_recyclerview;
+    private RecyclerView client_recyclerview;
     private ImageView image_up;
     private ExpandableLinearLayout expandableLayout;
-    private Spinner clent_time;
-    private Spinner clent_select;
+    private Spinner client_time;
+    private Spinner client_select;
     private ArrayAdapter<String> clent_select_spinnerAdapter;
     private ArrayAdapter<String> clent_time_spinnerAdapter;
     private boolean isopen = false;
@@ -71,14 +71,14 @@ public class clientClientActivity extends AppCompatActivity implements windowSof
     }
 
     private void setSpinner() {
-        clent_select_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.clent_select));
+        clent_select_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.client_select));
         clent_select_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
-        clent_select.setAdapter(clent_select_spinnerAdapter);
+        client_select.setAdapter(clent_select_spinnerAdapter);
 
 
-        clent_time_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.clent_time));
+        clent_time_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.client_time));
         clent_time_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
-        clent_time.setAdapter(clent_time_spinnerAdapter);
+        client_time.setAdapter(clent_time_spinnerAdapter);
     }
 
     private void setRecyclerview() {
@@ -92,18 +92,18 @@ public class clientClientActivity extends AppCompatActivity implements windowSof
         //方向一定要設才有效果
         final LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        clent_recyclerview.setLayoutManager(layoutManager);
+        client_recyclerview.setLayoutManager(layoutManager);
 
-        clent_recyclerview.setAdapter(mAdapter);
+        client_recyclerview.setAdapter(mAdapter);
     }
 
     private void findview() {
-        clent_select = (Spinner) findViewById(R.id.clent_select);
-        clent_time = (Spinner) findViewById(R.id.clent_time);
+        client_select = (Spinner) findViewById(R.id.client_select);
+        client_time = (Spinner) findViewById(R.id.client_time);
 
         image_up = (ImageView) findViewById(R.id.image_up);
         expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);//伸縮
-        clent_recyclerview = (RecyclerView) findViewById(R.id.clent_recyclerview);
+        client_recyclerview = (RecyclerView) findViewById(R.id.client_recyclerview);
     }
 
     @Override

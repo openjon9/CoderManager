@@ -1,10 +1,10 @@
 package com.coder.codermanager.Data;
 
 /**
- * Created by Rey on 2018/9/13.
+ * Created by Rey on 2018/9/14.
  */
 
-public class homePendingTestData {
+public class homeTodoData {
 
     private String id;
     private String priority = "低"; // 優先
@@ -20,7 +20,7 @@ public class homePendingTestData {
     private String upTime;//修改時間
     private String manaUser; //管理者
 
-    public homePendingTestData(String id) {
+    public homeTodoData(String id) {
         this.id = id;
     }
 

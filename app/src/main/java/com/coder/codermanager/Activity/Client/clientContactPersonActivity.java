@@ -42,7 +42,7 @@ public class clientContactPersonActivity extends AppCompatActivity implements wi
         setContentView(R.layout.activity_client_contact_person);
 
         context = this;
-        setTitle("代辦事項管理");
+        setTitle("聯絡人管理");
         findview();
         setRecyclerview();
         setSpinner();

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.coder.codermanager.Activity.Home.homeHomeActivity;
-import com.coder.codermanager.Activity.Home.homeTodoActivity;
+import com.coder.codermanager.homeTodoActivity;
 import com.coder.codermanager.Activity.Pro.proWorkActivity;
 import com.coder.codermanager.Activity.Pro.proProjectActivity;
 import com.coder.codermanager.R;
@@ -14,6 +14,7 @@ import com.coder.codermanager.Activity.Pro.proTodoActivity;
 import com.coder.codermanager.Activity.Client.clientClientActivity;
 import com.coder.codermanager.Activity.Client.clientContactPersonActivity;
 import com.coder.codermanager.Activity.Home.homePMActivity;
+import com.coder.codermanager.Activity.Home.homePendingTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -88,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
     public void btn_tested(View view) {
 //        Intent intent = new Intent(context, TestActivity.class);
 //        startActivity(intent);
+
+
+        Intent intent = new Intent(context, homePendingTestActivity.class);
+        startActivity(intent);
     }
 
     //客戶管理

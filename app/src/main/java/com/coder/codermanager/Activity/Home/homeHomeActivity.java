@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.coder.codermanager.Adapter.HomeListAdapter;
+import com.coder.codermanager.Adapter.HomeListAdapterTest;
 import com.coder.codermanager.Adapter.homeHomeListAdapter;
 import com.coder.codermanager.Data.homeHomeData;
 import com.coder.codermanager.R;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class homeHomeActivity extends AppCompatActivity {
 
     private RecyclerView homeRecyclerView;
-    private HomeListAdapter homeAdapter;
+    private HomeListAdapterTest homeAdapter;
     private homeHomeActivity context;
     private ArrayList<homeHomeData> mlist;
     private ImageView down_image;

@@ -108,12 +108,11 @@
         <item>中</item>
         <item>高</item>
         <item>緊急</item>
-
     </string-array>
 
-    /************clent*************/
+    /************client_client*************/
 
-    <string-array name="clent_select">
+    <string-array name="client_select">
         <item>請選擇</item>
         <item>名稱</item>
         <item>發票抬頭</item>
@@ -123,10 +122,9 @@
         <item>備註</item>
         <item>IP</item>
         <item>最後管理者</item>
-
     </string-array>
 
-    <string-array name="clent_time">
+    <string-array name="client_time">
         <item>建立時間</item>
         <item>最後修改時間</item>
     </string-array>
@@ -135,7 +133,6 @@
     /************contact_person***************/
 
     <string-array name="contact_person_select">
-
         <item>請選擇</item>
         <item>帳號</item>
         <item>姓名</item>
@@ -145,16 +142,13 @@
         <item>備註</item>
         <item>IP</item>
         <item>最後管理者</item>
-
     </string-array>
 
     <string-array name="contact_person_company">
-
         <item>p1</item>
         <item>p3</item>
         <item>p2</item>
         <item>p4</item>
-
     </string-array>
 
     <string-array name="contact_person_time">
@@ -162,5 +156,61 @@
         <item>最後修改時間</item>
     </string-array>
 
+    /**************home_todo******************/
+
+    <string-array name="home_todo_select">
+        <item>請選擇</item>
+        <item>標題</item>
+        <item>描述</item>
+        <item>備註</item>
+        <item>IP</item>
+        <item>最後管理者</item>
+    </string-array>
+
+    <string-array name="home_todo_project">
+        <item>p1</item>
+        <item>p3</item>
+        <item>p2</item>
+        <item>p4</item>
+    </string-array>
+
+    <string-array name="home_todo_priority">
+        <item>不限</item>
+        <item>低</item>
+        <item>中</item>
+        <item>高</item>
+        <item>緊急</item>
+    </string-array>
+
+    <string-array name="home_todo_type">
+        <item>不限</item>
+        <item>規格</item>
+        <item>追加</item>
+        <item>修改</item>
+        <item>維護</item>
+        <item>BUG</item>
+        <item>會議記錄</item>
+    </string-array>
+
+    <string-array name="home_todo_principal">//負責人
+        <item>p1</item>
+        <item>p3</item>
+        <item>p2</item>
+        <item>p4</item>
+    </string-array>
+
+    <string-array name="home_todo_testUser">//測試者
+        <item>p1</item>
+        <item>p3</item>
+        <item>p2</item>
+        <item>p4</item>
+    </string-array>
+
+    <string-array name="home_todo_upTime">
+        <item>開始時間</item>
+        <item>完成時間</item>
+        <item>建立時間</item>
+        <item>最後修改時間</item>
+    </string-array>
 
 </resources>

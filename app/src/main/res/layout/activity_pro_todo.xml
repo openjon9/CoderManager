@@ -132,6 +132,11 @@
                     android:layout_weight="0.2"
                     android:entries="@array/pro_todo_priority"></Spinner>
 
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_pageview" />
+
             </LinearLayout>
         </LinearLayout>
     </net.cachapa.expandablelayout.ExpandableLinearLayout>

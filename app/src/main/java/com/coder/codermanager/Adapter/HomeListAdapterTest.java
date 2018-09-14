@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Rey on 2018/8/22.
  */
 
-public class HomeListAdapter extends BaseAdapter {
+public class HomeListAdapterTest extends BaseAdapter {
 
     private ArrayList<String> mtitle;
     Context context;
@@ -30,14 +30,14 @@ public class HomeListAdapter extends BaseAdapter {
     public static final int TYPE_COMPANY = 1;
     private String TAG = "listAdapter";
 
-    public HomeListAdapter(MainActivity context, ArrayList<homeHomeData> mlist, ArrayList<String> listTitle) {
+    public HomeListAdapterTest(MainActivity context, ArrayList<homeHomeData> mlist, ArrayList<String> listTitle) {
 
         this.context = context;
         this.mList = mlist;
         this.mtitle = listTitle;
     }
 
-    public HomeListAdapter(Context context, List<homeHomeData> mList) {
+    public HomeListAdapterTest(Context context, List<homeHomeData> mList) {
         this.context = context;
         this.mList = mList;
     }

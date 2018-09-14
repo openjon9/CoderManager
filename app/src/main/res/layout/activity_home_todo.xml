@@ -5,6 +5,188 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.coder.codermanager.Activity.Home.homeTodoActivity">
+    android:padding="16dp"
+    tools:context="com.coder.codermanager.homeTodoActivity">
+
+    <LinearLayout
+
+        style="@style/linear2">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_youtube_searched" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="搜尋條件"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_add_circle" />
+
+        <ImageView
+            android:id="@+id/image_up"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_downward" />
+
+    </LinearLayout>
+
+    <net.cachapa.expandablelayout.ExpandableLinearLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_expandable="true">
+
+            <LinearLayout
+                style="@style/linear2"
+                android:layout_marginTop="5dp">
+
+                <Spinner
+                    android:id="@+id/home_todo_select"
+                    style="@style/spinner_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/home_todo_select"></Spinner>
+
+                <com.coder.codermanager.EditTextWithDel
+                    android:id="@+id/ed_pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/bg_edittext"
+                    android:ellipsize="end"
+                    android:imeOptions="actionDone"
+                    android:padding="5dp"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linear2"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="專案"
+                    android:textColor="#000" />
+
+                <Spinner
+                    android:id="@+id/home_todo_project"
+                    style="@style/spinner_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:entries="@array/home_todo_project"></Spinner>
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/linear2"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="類型"
+                    android:textColor="#000" />
+
+                <Spinner
+                    android:id="@+id/home_todo_type"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:entries="@array/home_todo_type"></Spinner>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="優先"
+                    android:textColor="#000" />
+
+                <Spinner
+                    android:id="@+id/home_todo_priority"
+                    style="@style/spinner_style"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.2"
+                    android:entries="@array/home_todo_priority"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linear2"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="負責人"
+                    android:textColor="#000" />
+
+                <Spinner
+                    android:id="@+id/home_todo_principal"
+                    style="@style/spinner_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:entries="@array/home_todo_principal"></Spinner>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="測試者"
+                    android:textColor="#000" />
+
+                <Spinner
+                    android:id="@+id/home_todo_testUser"
+                    style="@style/spinner_style"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:entries="@array/home_todo_testUser"></Spinner>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_pageview" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </net.cachapa.expandablelayout.ExpandableLinearLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_todo_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

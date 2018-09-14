@@ -5,22 +5,13 @@ import android.os.Bundle;
 
 import com.coder.codermanager.R;
 
-public class homeTodoActivity extends AppCompatActivity {
-
-    private homeTodoActivity context;
+public class homePendingTestClickActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_todo);
+        setContentView(R.layout.activity_home_pending_test_click);
 
-        setTitle("代辦事項");
-        context = this;
-        findview();
-
-    }
-
-    private void findview() {
 
     }
 

@@ -186,11 +186,12 @@
                 <Spinner
                     android:id="@+id/pro_project_start_time"
                     style="@style/spinner_style"
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:entries="@array/pro_project_statrt_time"></Spinner>
 
                 <EditText
+                    android:id="@+id/ed_pro_project_1"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -209,6 +210,7 @@
                     android:textSize="30dp" />
 
                 <EditText
+                    android:id="@+id/ed_pro_project_2"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -217,8 +219,12 @@
                     android:hint="這邊設日期"
                     android:padding="4dp"
                     android:singleLine="true" />
-
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_pageview" />
             </LinearLayout>
+
         </LinearLayout>
     </net.cachapa.expandablelayout.ExpandableLinearLayout>
 

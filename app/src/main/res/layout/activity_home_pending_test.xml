@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.homePendingTestActivity">
+    tools:context="com.coder.codermanager.Activity.Home.homePendingTestActivity">
 
     <LinearLayout
         android:layout_marginTop="10dp"
