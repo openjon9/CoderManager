@@ -12,21 +12,23 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/clent_id"
-            android:layout_width="wrap_content"
+            android:id="@+id/client_id"
+            android:layout_width="0dp"
+            android:layout_weight="0.05"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="ID" />
 
         <ImageView
-            android:id="@+id/clent_iogo"
+            android:id="@+id/client_iogo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/ic_android" />
 
         <TextView
-            android:id="@+id/clent_name"
+
+            android:id="@+id/client_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -35,7 +37,8 @@
 
 
         <TextView
-            android:id="@+id/clent_proNumber"
+            style="@style/red_text"
+            android:id="@+id/client_proNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

@@ -59,15 +59,22 @@
     </LinearLayout>
 
 
-    <LinearLayout style="@style/linear">
+    <LinearLayout
+        style="@style/linear"
+        android:gravity="center">
 
         <TextView
             style="@style/MyText"
             android:text="專案數量:" />
 
-        <TextView
-            style="@style/MyText2"
-            android:text="123" />
+        <LinearLayout style="@style/linear3">
+
+            <TextView
+                style="@style/MyText_red"
+                android:text="123" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

@@ -92,13 +92,15 @@
                     android:entries="@array/client_time"></Spinner>
 
 
-                <EditText
+                <TextView
+                    android:id="@+id/text_client_client_1"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"
+                    android:gravity="center"
                     android:hint="這邊設日期"
                     android:padding="4dp"
                     android:singleLine="true" />
@@ -110,12 +112,14 @@
                     android:textColor="#000"
                     android:textSize="30dp" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/text_client_client_2"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"
+                    android:gravity="center"
                     android:hint="這邊設日期"
                     android:padding="4dp"
                     android:singleLine="true" />
@@ -136,29 +140,32 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.05"
             android:text="ID" />
 
         <TextView
             android:layout_width="50dp"
-            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
             android:text="logo" />
 
         <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_weight="0.2"
+            android:paddingLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.2"
             android:text="名稱" />
 
         <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
             android:text="專案數量" />
 
     </LinearLayout>

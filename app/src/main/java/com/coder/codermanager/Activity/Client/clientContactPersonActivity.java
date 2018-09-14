@@ -1,5 +1,6 @@
 package com.coder.codermanager.Activity.Client;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,17 +9,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.coder.codermanager.Adapter.contactPersonListAdapter;
 import com.coder.codermanager.Data.contactPersonData;
+import com.coder.codermanager.Date.MyDate;
 import com.coder.codermanager.Interface.windowSoftInputModeInterface;
 import com.coder.codermanager.R;
 
 import net.cachapa.expandablelayout.ExpandableLinearLayout;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class clientContactPersonActivity extends AppCompatActivity implements windowSoftInputModeInterface {
 
@@ -35,12 +40,18 @@ public class clientContactPersonActivity extends AppCompatActivity implements wi
     private RecyclerView contact_person_recyclerview;
     private ArrayList<contactPersonData> myDataset;
     private contactPersonListAdapter mAdapter;
+    private TextView text_client_contact_person_1;
+    private TextView text_client_contact_person_2;
+    private Calendar calender;
+    private int year;
+    private int month;
+    private int day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_contact_person);
-
+        setCalender();
         context = this;
         setTitle("聯絡人管理");
         findview();
@@ -49,7 +60,44 @@ public class clientContactPersonActivity extends AppCompatActivity implements wi
         initEvent();
     }
 
+    private void setCalender() {
+        year = MyDate.getInstance().year();
+        month = MyDate.getInstance().month();
+        day = MyDate.getInstance().day();
+
+    }
+
     private void initEvent() {
+
+
+        text_client_contact_person_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_client_contact_person_1.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
+        text_client_contact_person_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_client_contact_person_2.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
 
         image_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +152,10 @@ public class clientContactPersonActivity extends AppCompatActivity implements wi
     }
 
     private void findview() {
+
+        text_client_contact_person_1=(TextView)findViewById(R.id.text_client_contact_person_1);
+        text_client_contact_person_2=(TextView)findViewById(R.id.text_client_contact_person_2);
+
         contact_person_select = (Spinner) findViewById(R.id.contact_person_select);
         contact_person_company = (Spinner) findViewById(R.id.contact_person_company);
         contact_person_time = (Spinner) findViewById(R.id.contact_person_time);

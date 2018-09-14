@@ -1,5 +1,6 @@
 package com.coder.codermanager.Activity.Pro;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,17 +9,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.coder.codermanager.Adapter.proWorkListAdapter;
 import com.coder.codermanager.Data.proWorkData;
+import com.coder.codermanager.Date.MyDate;
 import com.coder.codermanager.R;
 import com.coder.codermanager.Interface.windowSoftInputModeInterface;
 
 import net.cachapa.expandablelayout.ExpandableLinearLayout;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class proWorkActivity extends AppCompatActivity implements windowSoftInputModeInterface {
 
@@ -35,17 +40,30 @@ public class proWorkActivity extends AppCompatActivity implements windowSoftInpu
 
     private Spinner pro_work_time;
     private ArrayAdapter<String> pro_work_time_spinnerAdapter;
+    private TextView text_pro_work_1;
+    private TextView text_pro_work_2;
+    private Calendar calender;
+    private int year;
+    private int month;
+    private int day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pro_work_);
         context = this;
+        setCalender();
         setTitle("工作日誌");
         findview();
         setRecyclerview();
         setSpinner();
         initEvent();
+    }
+
+    private void setCalender() {
+        year = MyDate.getInstance().year();
+        month = MyDate.getInstance().month();
+        day = MyDate.getInstance().day();
     }
 
     private void setSpinner() {
@@ -77,6 +95,35 @@ public class proWorkActivity extends AppCompatActivity implements windowSoftInpu
     }
 
     private void initEvent() {
+        text_pro_work_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_pro_work_1.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
+        text_pro_work_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_pro_work_2.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
+
         image_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +144,9 @@ public class proWorkActivity extends AppCompatActivity implements windowSoftInpu
     }
 
     private void findview() {
+
+        text_pro_work_1 = (TextView) findViewById(R.id.text_pro_work_1);
+        text_pro_work_2 = (TextView) findViewById(R.id.text_pro_work_2);
 
         pro_work_selete = (Spinner) findViewById(R.id.pro_work_selete);
         pro_work_time = (Spinner) findViewById(R.id.pro_work_time);

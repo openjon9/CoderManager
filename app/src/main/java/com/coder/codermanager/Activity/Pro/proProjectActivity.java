@@ -1,5 +1,6 @@
 package com.coder.codermanager.Activity.Pro;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,20 +10,25 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.coder.codermanager.Adapter.proProjectListAdapter;
 import com.coder.codermanager.Data.proProjectData;
+import com.coder.codermanager.Date.MyDate;
 import com.coder.codermanager.R;
 import com.coder.codermanager.Interface.windowSoftInputModeInterface;
 
 import net.cachapa.expandablelayout.ExpandableLinearLayout;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class proProjectActivity extends AppCompatActivity implements windowSoftInputModeInterface {
 
@@ -57,12 +63,21 @@ public class proProjectActivity extends AppCompatActivity implements windowSoftI
     private Spinner pro_project_tester;
     private ArrayAdapter<String> pro_project_tester_spinnerAdapter;
 
+    private TextView text_pro_project_1;
+    private TextView text_pro_project_2;
+
+    private Calendar calender;
+    private int year;
+    private int month;
+    private int day;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pro_project);
         context = this;
+        setCalender();
         setTitle("專案");
         findview();
         setRecyclerview();
@@ -71,35 +86,42 @@ public class proProjectActivity extends AppCompatActivity implements windowSoftI
 
     }
 
+    private void setCalender() {
+        year = MyDate.getInstance().year();
+        month = MyDate.getInstance().month();
+        day = MyDate.getInstance().day();
+
+    }
+
     private void setSpinner() {
 
-        pro_project_start_time_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_statrt_time));
+        pro_project_start_time_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_statrt_time));
         pro_project_start_time_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_start_time.setAdapter(pro_project_start_time_spinnerAdapter);
 
-        pro_project_select_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_select));
+        pro_project_select_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_select));
         pro_project_select_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_select.setAdapter(pro_project_select_spinnerAdapter);
 
 
-        pro_project_client_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_client));
+        pro_project_client_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_client));
         pro_project_client_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_client.setAdapter(pro_project_client_spinnerAdapter);
 
-        pro_project_client_window_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_client_window));
+        pro_project_client_window_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_client_window));
         pro_project_client_window_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_client_window.setAdapter(pro_project_client_window_spinnerAdapter);
 
-        pro_project_leader_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_leader));
+        pro_project_leader_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_leader));
         pro_project_leader_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_leader.setAdapter(pro_project_leader_spinnerAdapter);
 
 
-        pro_project_execution_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_execution));
+        pro_project_execution_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_execution));
         pro_project_execution_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_execution.setAdapter(pro_project_execution_spinnerAdapter);
 
-        pro_project_tester_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout,R.id.text_spinner,getResources().getStringArray(R.array.pro_project_tester));
+        pro_project_tester_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.pro_project_tester));
         pro_project_tester_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         pro_project_tester.setAdapter(pro_project_tester_spinnerAdapter);
 
@@ -124,10 +146,40 @@ public class proProjectActivity extends AppCompatActivity implements windowSoftI
 
     private void initEvent() {
 
+        text_pro_project_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_pro_project_1.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
+
+        text_pro_project_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_pro_project_2.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
+
 
         pro_project_start_time.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent,  View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 //                TextView text_spinner = (TextView) view.findViewById(R.id.text_spinner);
 //                text_spinner.setText(parent.getItemAtPosition(position).toString());
             }
@@ -162,6 +214,35 @@ public class proProjectActivity extends AppCompatActivity implements windowSoftI
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+
+    private void findview() {
+
+        pro_project_select = (Spinner) findViewById(R.id.pro_project_select);
+        pro_project_start_time = (Spinner) findViewById(R.id.pro_project_start_time);
+        pro_project_client = (Spinner) findViewById(R.id.pro_project_client);
+        pro_project_client_window = (Spinner) findViewById(R.id.pro_project_client_window);
+        pro_project_leader = (Spinner) findViewById(R.id.pro_project_leader);
+        pro_project_execution = (Spinner) findViewById(R.id.pro_project_execution);
+        pro_project_tester = (Spinner) findViewById(R.id.pro_project_tester);
+
+        ed_pro = (EditText) findViewById(R.id.ed_pro);
+        text_pro_project_1 = (TextView) findViewById(R.id.text_pro_project_1);
+        text_pro_project_2 = (TextView) findViewById(R.id.text_pro_project_2);
+
+        image_up = (ImageView) findViewById(R.id.image_up);
+        linear = (LinearLayout) findViewById(R.id.linear);
+        expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);//伸縮
+        pro_recyclerview = (RecyclerView) findViewById(R.id.pro_recyclerview);
+
+    }
+
+
+    @Override
+    public void hideSoft(View view) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     /********點空白區域隱藏鍵盤********/
@@ -205,28 +286,4 @@ public class proProjectActivity extends AppCompatActivity implements windowSoftI
 //        }
 //        return false;
 //    }
-    private void findview() {
-
-        pro_project_select=(Spinner)findViewById(R.id.pro_project_select);
-        pro_project_start_time = (Spinner) findViewById(R.id.pro_project_start_time);
-        pro_project_client=(Spinner)findViewById(R.id.pro_project_client);
-        pro_project_client_window=(Spinner)findViewById(R.id.pro_project_client_window);
-        pro_project_leader=(Spinner)findViewById(R.id.pro_project_leader);
-        pro_project_execution=(Spinner)findViewById(R.id.pro_project_execution);
-        pro_project_tester=(Spinner)findViewById(R.id.pro_project_tester);
-
-        ed_pro = (EditText) findViewById(R.id.ed_pro);
-        image_up = (ImageView) findViewById(R.id.image_up);
-        linear = (LinearLayout) findViewById(R.id.linear);
-        expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);//伸縮
-        pro_recyclerview = (RecyclerView) findViewById(R.id.pro_recyclerview);
-
-    }
-
-
-    @Override
-    public void hideSoft(View view) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
 }

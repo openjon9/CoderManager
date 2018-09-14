@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.coder.codermanager.Activity.Client.clientClientClickActivity;
+import com.coder.codermanager.Activity.Pro.proProjectActivity;
 import com.coder.codermanager.Data.clentData;
 import com.coder.codermanager.R;
 
@@ -41,10 +43,10 @@ public class clentListAdapter extends RecyclerView.Adapter<clentListAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.clent_id.setText(mData.get(position).getId());
-        holder.clent_name.setText(mData.get(position).getName());
-        holder.clent_proNumber.setText(mData.get(position).getProNumber());
-        holder.clent_iogo.setImageResource(R.drawable.ic_android);
+        holder.client_id.setText(mData.get(position).getId());
+        holder.client_name.setText(mData.get(position).getName());
+        holder.client_proNumber.setText(mData.get(position).getProNumber());
+        holder.client_iogo.setImageResource(R.drawable.ic_android);
 
 
         if (mData.size() - 1 == position) {
@@ -52,6 +54,17 @@ public class clentListAdapter extends RecyclerView.Adapter<clentListAdapter.View
         } else {
             holder.line.setVisibility(View.VISIBLE);
         }
+
+        holder.client_proNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent =new Intent(context,proProjectActivity.class); //帶入單一客戶的傳案數量 到專案頁面
+                context.startActivity(intent);
+               // Toast.makeText(context, "123", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,21 +85,21 @@ public class clentListAdapter extends RecyclerView.Adapter<clentListAdapter.View
 
 
         private TextView line;
-        private TextView clent_name;
-        private ImageView clent_iogo;
-        private TextView clent_id;
+        private TextView client_name;
+        private ImageView client_iogo;
+        private TextView client_id;
 
-        private TextView clent_proNumber;
+        private TextView client_proNumber;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
 
 
-            clent_id = (TextView) itemView.findViewById(R.id.clent_id);
-            clent_name = (TextView) itemView.findViewById(R.id.clent_name);
-            clent_iogo = (ImageView) itemView.findViewById(R.id.clent_iogo);
-            clent_proNumber = (TextView) itemView.findViewById(R.id.clent_proNumber);
+            client_id = (TextView) itemView.findViewById(R.id.client_id);
+            client_name = (TextView) itemView.findViewById(R.id.client_name);
+            client_iogo = (ImageView) itemView.findViewById(R.id.client_iogo);
+            client_proNumber = (TextView) itemView.findViewById(R.id.client_proNumber);
 
 
             line = (TextView) itemView.findViewById(R.id.line);

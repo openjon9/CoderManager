@@ -87,9 +87,11 @@
                     android:entries="@array/pro_work_time"></Spinner>
 
 
-                <EditText
+                <TextView
+                    android:id="@+id/text_pro_work_1"
+                    android:gravity="center"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
@@ -105,9 +107,11 @@
                     android:textColor="#000"
                     android:textSize="30dp" />
 
-                <EditText
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/text_pro_work_2"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"

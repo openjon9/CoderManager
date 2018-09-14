@@ -9,37 +9,37 @@ import android.widget.TextView;
 import com.coder.codermanager.Activity.Pro.proWorkActivity;
 import com.coder.codermanager.R;
 
-public class homePendingTestClickActivity extends AppCompatActivity {
+public class homeTodoClickActivity extends AppCompatActivity {
 
-    private homePendingTestClickActivity context;
-    private TextView text_home_pending_test_workSave;
+    private homeTodoClickActivity context;
+    private TextView text_home_todo_workSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_pending_test_click);
-        context = this;
+        setContentView(R.layout.activity_home_todo_click);
 
+        context = this;
         findview();
         initEvent();
-
     }
 
     private void initEvent() {
-        text_home_pending_test_workSave.setOnClickListener(new View.OnClickListener() {
+
+        text_home_todo_workSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, proWorkActivity.class);
+                Intent intent =new Intent(context,proWorkActivity.class);//帶入個別欄位工作紀錄數量到工作日誌
                 startActivity(intent);
             }
         });
+
     }
 
     private void findview() {
 
-        text_home_pending_test_workSave = (TextView) findViewById(R.id.text_home_pending_test_workSave);
+        text_home_todo_workSave = (TextView) findViewById(R.id.text_home_todo_workSave);
 
     }
-
 
 }

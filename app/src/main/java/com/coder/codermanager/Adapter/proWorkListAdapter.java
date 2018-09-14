@@ -1,5 +1,6 @@
 package com.coder.codermanager.Adapter;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -8,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
 
 import com.coder.codermanager.Data.proWorkData;
+import com.coder.codermanager.Date.MyDate;
 import com.coder.codermanager.R;
 
 import java.util.List;
@@ -27,6 +30,9 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
     private Context context;
     private List<proWorkData> mData;
     private AlertDialog mdialog;
+    private int year;
+    private int month;
+    private int day;
 
     public proWorkListAdapter(Context context, List<proWorkData> mData) {
         this.context = context;
@@ -43,7 +49,8 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+
         holder.text_name.setText(mData.get(position).getName());
         holder.text_time.setText(mData.get(position).getTime());
         holder.text_project.setText(mData.get(position).getProject());
@@ -64,16 +71,35 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
             public boolean onLongClick(View view) {
                 View mview = LayoutInflater.from(context).inflate(R.layout.prowork_dialog_1, null);
                 EditText ed_name = (EditText) mview.findViewById(R.id.ed_name);
-                EditText ed_time = (EditText) mview.findViewById(R.id.ed_time);
+                final TextView ed_time = (TextView) mview.findViewById(R.id.ed_time);
                 EditText ed_write = (EditText) mview.findViewById(R.id.ed_write);
                 Button btn_yes = (Button) mview.findViewById(R.id.btn_yes);
                 Button btn_no = (Button) mview.findViewById(R.id.btn_no);
 
+                setCalender();
+
+                ed_name.setText(mData.get(position).getName());
+                ed_time.setText(year + "-" + (month + 1) + "-" + day);
+                ed_write.setText(mData.get(position).getRemarks());
 
                 mdialog = new AlertDialog.Builder(context)
                         .setView(mview)
                         // .setCancelable(false)
                         .show();
+
+                ed_time.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                                ed_time.setText(year + "-" + (month + 1) + "-" + day);
+                            }
+                        }, year, month, day);
+                        datedialog.show();
+                    }
+                });
 
                 btn_yes.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -99,7 +125,6 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
 //                PopupWindow popupWindow = new PopupWindow(popupView,800,800,true);
 //                popupWindow.setBackgroundDrawable(new ColorDrawable(0x4e000000));
 //                popupWindow.showAtLocation(popupView,Gravity.CENTER,0,0);
-
 
 
         });
@@ -133,5 +158,12 @@ public class proWorkListAdapter extends RecyclerView.Adapter<proWorkListAdapter.
         }
     }
 
+    private void setCalender() {
+
+        year = MyDate.getInstance().year();
+        month = MyDate.getInstance().month();
+        day = MyDate.getInstance().day();
+
+    }
 
 }

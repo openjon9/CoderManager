@@ -190,10 +190,11 @@
                     android:layout_height="wrap_content"
                     android:entries="@array/pro_project_statrt_time"></Spinner>
 
-                <EditText
-                    android:id="@+id/ed_pro_project_1"
+                <TextView
+                    android:id="@+id/text_pro_project_1"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
@@ -209,10 +210,11 @@
                     android:textColor="#000"
                     android:textSize="30dp" />
 
-                <EditText
-                    android:id="@+id/ed_pro_project_2"
+                <TextView
+                    android:id="@+id/text_pro_project_2"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"

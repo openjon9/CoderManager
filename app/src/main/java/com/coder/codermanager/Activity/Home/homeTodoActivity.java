@@ -1,5 +1,6 @@
-package com.coder.codermanager;
+package com.coder.codermanager.Activity.Home;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,14 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.coder.codermanager.Adapter.homeTodoListAdapter;
-import com.coder.codermanager.Adapter.proTodoListAdapter;
 import com.coder.codermanager.Data.homeTodoData;
-import com.coder.codermanager.Data.proTodoData;
+import com.coder.codermanager.Date.MyDate;
 import com.coder.codermanager.Interface.windowSoftInputModeInterface;
+import com.coder.codermanager.R;
 
 import net.cachapa.expandablelayout.ExpandableLinearLayout;
 
@@ -42,12 +45,19 @@ public class homeTodoActivity extends AppCompatActivity implements windowSoftInp
     private RecyclerView home_todo_recyclerview;
     private ArrayList<homeTodoData> myDataset;
     private homeTodoListAdapter mAdapter;
+    private Spinner home_todo_time;
+    private ArrayAdapter<String> home_todo_time_spinnerAdapter;
+    private TextView text_home_todo_1;
+    private TextView text_home_todo_2;
+    private int year;
+    private int month;
+    private int day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_todo);
-
+        setCalender();
         setTitle("代辦事項");
         context = this;
         findview();
@@ -57,7 +67,43 @@ public class homeTodoActivity extends AppCompatActivity implements windowSoftInp
 
     }
 
+    private void setCalender() {
+        year = MyDate.getInstance().year();
+        month = MyDate.getInstance().month();
+        day = MyDate.getInstance().day();
+
+    }
+
     private void initEvent() {
+
+        text_home_todo_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_home_todo_1.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
+        text_home_todo_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datedialog = new DatePickerDialog(context, android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        text_home_todo_2.setText(year + "-" + (month + 1) + "-" + day);
+                    }
+                }, year, month, day);
+                datedialog.show();
+            }
+        });
+
 
 
         image_up.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +152,10 @@ public class homeTodoActivity extends AppCompatActivity implements windowSoftInp
         home_todo_testUser_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.home_todo_testUser));
         home_todo_testUser_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
         home_todo_testUser.setAdapter(home_todo_testUser_spinnerAdapter);
+
+        home_todo_time_spinnerAdapter = new ArrayAdapter<String>(context, R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.home_todo_time));
+        home_todo_time_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
+        home_todo_time.setAdapter(home_todo_time_spinnerAdapter);
     }
 
     private void setRecyclerview() {
@@ -127,16 +177,20 @@ public class homeTodoActivity extends AppCompatActivity implements windowSoftInp
     private void findview() {
 
         image_up = (ImageView) findViewById(R.id.image_up);
-        expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);//伸縮
+
+
         home_todo_select = (Spinner) findViewById(R.id.home_todo_select);
         home_todo_project = (Spinner) findViewById(R.id.home_todo_project);
         home_todo_type = (Spinner) findViewById(R.id.home_todo_type);
         home_todo_priority = (Spinner) findViewById(R.id.home_todo_priority);
-
+        home_todo_time=(Spinner)findViewById(R.id.home_todo_time);
         home_todo_principal = (Spinner) findViewById(R.id.home_todo_principal);
         home_todo_testUser = (Spinner) findViewById(R.id.home_todo_testUser);
 
+        text_home_todo_1=(TextView)findViewById(R.id.text_home_todo_1);
+        text_home_todo_2=(TextView)findViewById(R.id.text_home_todo_2);
 
+        expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) findViewById(R.id.expandableLayout);//伸縮
         home_todo_recyclerview = (RecyclerView) findViewById(R.id.home_todo_recyclerview);
     }
 

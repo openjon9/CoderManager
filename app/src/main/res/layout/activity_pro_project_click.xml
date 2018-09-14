@@ -21,15 +21,21 @@
     </LinearLayout>
 
 
-    <LinearLayout style="@style/linear">
+    <LinearLayout
+        style="@style/linear"
+        android:gravity="center">
 
         <TextView
             style="@style/MyText"
             android:text="客戶:" />
 
-        <TextView
-            style="@style/MyText2"
-            android:text="123" />
+        <LinearLayout style="@style/linear3">
+
+            <TextView
+                style="@style/MyText_red"
+                android:text="123" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
@@ -133,27 +139,42 @@
     </LinearLayout>
 
 
-    <LinearLayout style="@style/linear">
+    <LinearLayout
+        style="@style/linear"
+        android:gravity="center">
 
         <TextView
             style="@style/MyText"
             android:text="代辦數量:" />
 
-        <TextView
-            style="@style/MyText2"
-            android:text="123" />
+        <LinearLayout style="@style/linear3">
+
+            <TextView
+                android:id="@+id/text_pro_project_toDoNumber"
+                style="@style/MyText_red"
+                android:text="123" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
 
-    <LinearLayout style="@style/linear">
+    <LinearLayout
+        style="@style/linear"
+        android:gravity="center">
 
         <TextView
             style="@style/MyText"
             android:text="代辦BUG:" />
 
-        <TextView
-            style="@style/MyText2"
-            android:text="123" />
+        <LinearLayout style="@style/linear3">
+
+            <TextView
+                android:id="@+id/text_pro_project_toDoBug"
+                style="@style/MyText_red"
+                android:text="123" />
+        </LinearLayout>
+
     </LinearLayout>
 
 

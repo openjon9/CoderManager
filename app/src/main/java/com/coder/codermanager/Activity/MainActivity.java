@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.coder.codermanager.Activity.Home.homeHomeActivity;
-import com.coder.codermanager.homeTodoActivity;
+import com.coder.codermanager.Activity.Home.homeTodoActivity;
 import com.coder.codermanager.Activity.Pro.proWorkActivity;
 import com.coder.codermanager.Activity.Pro.proProjectActivity;
 import com.coder.codermanager.R;

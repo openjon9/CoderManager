@@ -12,12 +12,17 @@ public class clentData {
     private String name = "公司名稱";
     private String editor = "10203040";//統編
     private String URL = "www.test.com";//公司網址
-    private String proNumber = "1";//專案數量
+    private String proNumber = "100";//專案數量
     private String upTime = "2018-08-29 15:29:34";
     private String upUser = "egg";//最後管理者
 
     public clentData(String id) {
         this.id = id;
+    }
+
+    public clentData(String id, String proNumber) {
+        this.id = id;
+        this.proNumber = proNumber;
     }
 
     public String getId() {

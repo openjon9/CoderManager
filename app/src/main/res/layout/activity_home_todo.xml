@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.homeTodoActivity">
+    tools:context="com.coder.codermanager.Activity.Home.homeTodoActivity">
 
     <LinearLayout
 
@@ -171,13 +171,60 @@
                     android:layout_weight="0.5"
                     android:entries="@array/home_todo_testUser"></Spinner>
 
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linear2"
+                android:layout_marginTop="5dp">
+
+                <Spinner
+                    android:id="@+id/home_todo_time"
+                    style="@style/spinner_style"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/home_todo_time"></Spinner>
+
+
+                <TextView
+                    android:id="@+id/text_home_todo_1"
+                    android:gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/bg_edittext"
+                    android:ellipsize="end"
+                    android:hint="這邊設日期"
+                    android:padding="4dp"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~"
+                    android:textColor="#000"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/text_home_todo_2"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/bg_edittext"
+                    android:ellipsize="end"
+                    android:hint="這邊設日期"
+                    android:padding="4dp"
+                    android:singleLine="true" />
+
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_pageview" />
 
             </LinearLayout>
-
 
         </LinearLayout>
     </net.cachapa.expandablelayout.ExpandableLinearLayout>

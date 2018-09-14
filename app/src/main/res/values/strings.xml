@@ -206,7 +206,7 @@
         <item>p4</item>
     </string-array>
 
-    <string-array name="home_todo_upTime">
+    <string-array name="home_todo_time">
         <item>開始時間</item>
         <item>完成時間</item>
         <item>建立時間</item>

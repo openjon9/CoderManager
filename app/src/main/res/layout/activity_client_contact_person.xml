@@ -114,9 +114,11 @@
                     android:entries="@array/contact_person_time"></Spinner>
 
 
-                <EditText
+                <TextView
+                    android:id="@+id/text_client_contact_person_1"
+                    android:gravity="center"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
@@ -132,9 +134,11 @@
                     android:textColor="#000"
                     android:textSize="30dp" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/text_client_contact_person_2"
+                    android:gravity="center"
                     android:layout_width="100dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/bg_edittext"
                     android:ellipsize="end"

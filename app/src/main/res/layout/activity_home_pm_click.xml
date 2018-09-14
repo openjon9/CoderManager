@@ -69,15 +69,23 @@
     </LinearLayout>
 
 
-    <LinearLayout style="@style/linear">
+    <LinearLayout
+        style="@style/linear"
+        android:gravity="center">
 
         <TextView
             style="@style/MyText"
             android:text="工作紀錄:" />
 
-        <TextView
-            style="@style/MyText2"
-            android:text="123" />
+        <LinearLayout style="@style/linear3">
+
+            <TextView
+                android:id="@+id/text_home_pm_workSave"
+                style="@style/MyText_red"
+                android:text="123" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

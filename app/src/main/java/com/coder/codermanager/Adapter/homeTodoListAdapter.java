@@ -9,10 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.coder.codermanager.Activity.Home.homePmClickActivity;
 import com.coder.codermanager.Data.homeTodoData;
 import com.coder.codermanager.R;
-import com.coder.codermanager.homeTodoClickActivity;
+import com.coder.codermanager.Activity.Home.homeTodoClickActivity;
 
 import java.util.List;
 

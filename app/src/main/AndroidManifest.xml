@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.Home.homeHomeActivity" />
-        <activity android:name=".homeTodoActivity" />
+        <activity android:name=".Activity.Home.homeTodoActivity" />
         <activity android:name=".Activity.Pro.proProjectActivity" />
         <activity android:name=".Activity.Pro.proProjectClickActivity" />
         <activity android:name=".Activity.Pro.proWorkActivity" />
@@ -37,7 +37,7 @@
         <activity android:name=".Activity.Home.homePmClickActivity" />
         <activity android:name=".Activity.Home.homePendingTestActivity" />
         <activity android:name=".Activity.Home.homePendingTestClickActivity" />
-        <activity android:name=".homeTodoClickActivity"></activity>
+        <activity android:name=".Activity.Home.homeTodoClickActivity"></activity>
     </application>
 
 </manifest>

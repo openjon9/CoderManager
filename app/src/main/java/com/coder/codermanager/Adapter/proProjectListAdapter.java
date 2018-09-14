@@ -56,6 +56,15 @@ public class proProjectListAdapter extends RecyclerView.Adapter<proProjectListAd
             holder.line.setVisibility(View.VISIBLE);
         }
 
+//        holder.text_client.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent =new Intent(context,);
+//                context.startActivity(intent);
+//            }
+//        });
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

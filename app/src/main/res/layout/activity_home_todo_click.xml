@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.coder.codermanager.homeTodoClickActivity">
+    tools:context="com.coder.codermanager.Activity.Home.homeTodoClickActivity">
 
     <LinearLayout style="@style/linear">
 
@@ -69,15 +69,22 @@
     </LinearLayout>
 
 
-    <LinearLayout style="@style/linear">
+    <LinearLayout
+        style="@style/linear"
+        android:gravity="center">
 
         <TextView
             style="@style/MyText"
             android:text="工作紀錄:" />
 
-        <TextView
-            style="@style/MyText2"
-            android:text="123" />
+        <LinearLayout style="@style/linear3">
+
+            <TextView
+                android:id="@+id/text_home_todo_workSave"
+                style="@style/MyText_red"
+                android:text="123" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
