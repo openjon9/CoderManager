@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.coder.codermanager.Adapter.clentListAdapter;
-import com.coder.codermanager.Data.clentData;
+import com.coder.codermanager.Data.clientData;
 import com.coder.codermanager.Date.MyDate;
 import com.coder.codermanager.Interface.windowSoftInputModeInterface;
 import com.coder.codermanager.R;
@@ -35,7 +35,7 @@ public class clientClientActivity extends AppCompatActivity implements windowSof
     private ArrayAdapter<String> clent_select_spinnerAdapter;
     private ArrayAdapter<String> clent_time_spinnerAdapter;
     private boolean isopen = false;
-    private ArrayList<clentData> myDataset;
+    private ArrayList<clientData> myDataset;
     private clentListAdapter mAdapter;
     private TextView text_client_client_1;
     private TextView text_client_client_2;
@@ -128,7 +128,7 @@ public class clientClientActivity extends AppCompatActivity implements windowSof
     private void setRecyclerview() {
         myDataset = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            myDataset.add(new clentData(String.valueOf(i),String.valueOf(i)));
+            myDataset.add(new clientData(String.valueOf(i),String.valueOf(i)));
         }
 
         mAdapter = new clentListAdapter(context, myDataset);

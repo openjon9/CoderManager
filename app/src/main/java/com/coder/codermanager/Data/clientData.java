@@ -4,7 +4,7 @@ package com.coder.codermanager.Data;
  * Created by Rey on 2018/9/13.
  */
 
-public class clentData {
+public class clientData {
 
 
     private String id;
@@ -16,11 +16,11 @@ public class clentData {
     private String upTime = "2018-08-29 15:29:34";
     private String upUser = "egg";//最後管理者
 
-    public clentData(String id) {
+    public clientData(String id) {
         this.id = id;
     }
 
-    public clentData(String id, String proNumber) {
+    public clientData(String id, String proNumber) {
         this.id = id;
         this.proNumber = proNumber;
     }

@@ -9,7 +9,7 @@ public class proProjectData {
     private String ID;
     private String Name = "test";                      //名稱
     private String imgUrl;                    //圖片網址
-    private String client = "test2";                    //客戶
+    private String client = "main_page_2";                    //客戶
     private String clientWindow;              //客戶窗口
     private String proLeader;                 //專案負責人
     private String proExecution;              //專案執行

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".DoubleFragment.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +37,8 @@
         <activity android:name=".Activity.Home.homePmClickActivity" />
         <activity android:name=".Activity.Home.homePendingTestActivity" />
         <activity android:name=".Activity.Home.homePendingTestClickActivity" />
-        <activity android:name=".Activity.Home.homeTodoClickActivity"></activity>
+        <activity android:name=".Activity.Home.homeTodoClickActivity" />
+        <!--<activity android:name=".Main2Activity"></activity>-->
     </application>
 
 </manifest>

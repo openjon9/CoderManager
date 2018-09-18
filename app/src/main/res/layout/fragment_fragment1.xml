@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.coder.codermanager.OutFragment.Fragment1">
+
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_essence"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/essence_tab_bg"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/essence_tab_text_color_press"
+        app:tabTextColor="@color/essence_tab_text_color_normal"
+        app:tabIndicatorColor="@color/essence_tab_text_color_press"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_essence"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_bome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#b6d1f2"
+            android:text="首頁資訊" />
+
+        <Button
+            android:id="@+id/btn_todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:text="代辦事項" />
+
+        <Button
+            android:id="@+id/btn_PM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:text="PM管理事項" />
+
+
+        <Button
+            android:id="@+id/btn_tested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#b6d1f2"
+            android:text="待測試事項" />
+    </LinearLayout>
+</LinearLayout>

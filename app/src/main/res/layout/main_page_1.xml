@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_bome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#b6d1f2"
+        android:onClick="btn_bome"
+        android:text="首頁資訊" />
+
+    <Button
+        android:id="@+id/btn_todo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#b6d1f2"
+        android:onClick="btn_todo"
+        android:text="代辦事項" />
+
+    <Button
+        android:id="@+id/btn_PM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#b6d1f2"
+        android:onClick="btn_PM"
+        android:text="PM管理事項" />
+
+
+    <Button
+        android:id="@+id/btn_tested"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#b6d1f2"
+        android:onClick="btn_tested"
+        android:text="待測試事項" />
+
+</LinearLayout>

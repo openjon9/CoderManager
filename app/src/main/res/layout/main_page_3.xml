@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btn_Project"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#b6d1f2"
+        android:onClick="btn_Project"
+        android:text="專案" />
+
+
+    <Button
+        android:id="@+id/btn_Todomanagment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#b6d1f2"
+        android:onClick="btn_Todomanagment"
+        android:text="代辦事項管理" />
+
+    <Button
+        android:id="@+id/btn_worklog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#b6d1f2"
+        android:onClick="btn_worklog"
+        android:text="工作日誌" />
+
+
+</LinearLayout>

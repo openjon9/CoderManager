@@ -1,183 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#e9f0f9"
-    android:padding="16dp"
-    android:scrollbars="none"
-    tools:context="com.coder.codermanager.Activity.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.coder.codermanager.SingleFragment.MainActivity">
 
-    <LinearLayout
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        app:tabIndicatorColor="@color/indigo"
+        app:tabIndicatorHeight="2dp"
+        android:background="@color/pink"
+        app:tabSelectedTextColor="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    </android.support.design.widget.TabLayout>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout_sub"
+        app:tabIndicatorColor="@color/indigo"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_home" />
+    </android.support.design.widget.TabLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:text="首頁"
-                    android:textColor="#000"
-                    android:textSize="30dp" />
-            </FrameLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation">
 
 
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_bome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#b6d1f2"
-            android:onClick="btn_bome"
-            android:text="首頁資訊" />
-
-        <Button
-            android:id="@+id/btn_todo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_todo"
-            android:text="代辦事項" />
-
-        <Button
-            android:id="@+id/btn_PM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_PM"
-            android:text="PM管理事項" />
-
-
-        <Button
-            android:id="@+id/btn_tested"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_tested"
-            android:text="待測試事項" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_tag_faces" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="客戶管理"
-                    android:textColor="#000"
-                    android:textSize="30dp" />
-
-            </FrameLayout>
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_Customer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_Customer"
-            android:text="客戶管理" />
-
-        <Button
-            android:id="@+id/btn_Contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_Contact"
-            android:text="聯絡人管理" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@drawable/ic_folder_black"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="專案管理"
-                    android:textColor="#000"
-                    android:textSize="30dp" />
-
-            </FrameLayout>
-
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/btn_Project"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_Project"
-            android:text="專案" />
-
-
-        <Button
-            android:id="@+id/btn_Todomanagment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_Todomanagment"
-            android:text="代辦事項管理" />
-
-        <Button
-            android:id="@+id/btn_worklog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#b6d1f2"
-            android:onClick="btn_worklog"
-            android:text="工作日誌" />
-
-    </LinearLayout>
-</ScrollView>
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

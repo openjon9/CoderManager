@@ -9,11 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.coder.codermanager.Activity.Client.clientClientClickActivity;
 import com.coder.codermanager.Activity.Pro.proProjectActivity;
-import com.coder.codermanager.Data.clentData;
+import com.coder.codermanager.Data.clientData;
 import com.coder.codermanager.R;
 
 import java.util.List;
@@ -25,9 +24,9 @@ import java.util.List;
 public class clentListAdapter extends RecyclerView.Adapter<clentListAdapter.ViewHolder> {
 
     private Context context;
-    private List<clentData> mData;
+    private List<clientData> mData;
 
-    public clentListAdapter(Context context, List<clentData> mData) {
+    public clentListAdapter(Context context, List<clientData> mData) {
         this.context = context;
         this.mData = mData;
     }

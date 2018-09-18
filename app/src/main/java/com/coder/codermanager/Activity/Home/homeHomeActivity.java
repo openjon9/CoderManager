@@ -34,7 +34,6 @@ public class homeHomeActivity extends AppCompatActivity {
 
         initData();
         setRecyclerview();
-        //init();
         initEvent();
 
     }

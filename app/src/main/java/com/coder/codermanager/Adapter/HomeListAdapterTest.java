@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.coder.codermanager.Data.homeHomeData;
-import com.coder.codermanager.Activity.MainActivity;
+import com.coder.codermanager.SingleFragment.MainActivity;
 import com.coder.codermanager.R;
 
 import java.util.ArrayList;
