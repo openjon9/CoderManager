@@ -11,6 +11,10 @@ public class homeHomeData {
     private String UnNumber = "5";
     private String timeOutNumber = "3";
 
+    public homeHomeData(String proName) {
+        this.proName = proName;
+    }
+
     public String getUnDate() {
         return UnDate;
     }

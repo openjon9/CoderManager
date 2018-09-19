@@ -1,13 +1,18 @@
 package com.coder.codermanager.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.coder.codermanager.Activity.Pro.proTodoActivity;
 import com.coder.codermanager.Data.homeHomeData;
 import com.coder.codermanager.R;
 
@@ -26,15 +31,17 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
 
     private Context context;
     private List<homeHomeData> mData;
-    private int itemCount = 1;
+    private int itemCount = 3;
     private String TAG = "HomeList";
 
     private View mFooterView;
     private View mHeaderView;
+    private int pos;
 
     public View getmFooterView() {
         return mFooterView;
     }
+
     public View getmHeaderView() {
         return mHeaderView;
     }
@@ -66,9 +73,9 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
         if (position == 0) {
             return TYPE_HEADER;
         }
-        if (position == getItemCount() - 1) {
-            return TYPE_FOOTER;
-        }
+//        if (position == getItemCount() - 1) {
+//            return TYPE_FOOTER;
+//        }
 
         return TYPE_NORMAL;
     }
@@ -92,10 +99,13 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+        //  Log.d(TAG, getItemViewType(position) + "");
+        pos = getRealPosition(holder);
+
         if (getItemViewType(position) == TYPE_NORMAL) {
-            holder.timeOutNumber.setText(mData.get(position).getTimeOutNumber());
-            holder.UnNumber.setText(mData.get(position).getUnNumber());
-            holder.proName.setText(mData.get(position).getProName());
+            holder.timeOutNumber.setText(mData.get(pos).getTimeOutNumber());
+            holder.UnNumber.setText(mData.get(pos).getUnNumber());
+            holder.proName.setText(mData.get(pos).getProName());
 
 //            if ( getItemCount() == itemCount) {
 //
@@ -108,6 +118,15 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
 //                ((ViewHolder) holder).UnNumber.setText(mData.get(position).getUnNumber());
 //                ((ViewHolder) holder).timeOutNumber.setText(mData.get(position).getTimeOutNumber());
 //            }
+
+            holder.linear_UnNumber.setOnClickListener(new View.OnClickListener() { //mHeaderView 沒有這個元件  所以沒辦法統一放Fragment 裡
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, proTodoActivity.class);
+                    context.startActivity(intent);
+                }
+            });
+
         } else if (getItemViewType(position) == TYPE_HEADER) {
             //  ((ViewHolder) holder).UnDate.setText(mData.get(position).getUnDate());
             holder.UnDate.setText(mData.get(position).getUnDate());
@@ -116,38 +135,45 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
             return;
         }
 
+
     }
 
+    public int getRealPosition(RecyclerView.ViewHolder holder) {
+        int position = holder.getLayoutPosition();
+        return mHeaderView == null ? position : position - 1;
+    }
 
     //返回View中Item的个数，这个时候，总的个数应该是ListView中Item的个数加上HeaderView和FooterView
     @Override
     public int getItemCount() {
 
-        if (mHeaderView == null && mFooterView == null) {
-            if (mData.size() >= 1) {
-                return itemCount;
-            } else {
-                return mData.size();
-            }
-        } else if (mHeaderView == null && mFooterView != null) {
-            if (mData.size() >= 1) {
-                return itemCount;
-            } else {
-                return mData.size() + 1;
-            }
-        } else if (mHeaderView != null && mFooterView == null) {
-            if (mData.size() >= 1) {
-                return itemCount;
-            } else {
-                return mData.size() + 1;
-            }
-        } else {
-            if (mData.size() >= 1) {
-                return itemCount;
-            } else {
-                return mData.size() + 2;
-            }
-        }
+        return mData.size() + 1;
+
+//        if (mHeaderView == null && mFooterView == null) {
+//            if (mData.size() >= 1) {
+//                return itemCount;
+//            } else {
+//                return mData.size();
+//            }
+//        } else if (mHeaderView == null && mFooterView != null) {
+//            if (mData.size() >= 1) {
+//                return itemCount;
+//            } else {
+//                return mData.size() + 1;
+//            }
+//        } else if (mHeaderView != null && mFooterView == null) {
+//            if (mData.size() >= 1) {
+//                return itemCount;
+//            } else {
+//                return mData.size() + 1;
+//            }
+//        } else {
+//            if (mData.size() >= 1) {
+//                return itemCount;
+//            } else {
+//                return mData.size() + 2;
+//            }
+//        }
 
     }
 
@@ -174,6 +200,7 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
 
         TextView UnDate;
 
+        LinearLayout linear_UnNumber;
 
 
         public ViewHolder(View itemView) {
@@ -187,7 +214,7 @@ public class homeHomeListAdapter extends RecyclerView.Adapter<homeHomeListAdapte
                 proName = (TextView) itemView.findViewById(R.id.proName);
                 UnNumber = (TextView) itemView.findViewById(R.id.UnNumber);
                 timeOutNumber = (TextView) itemView.findViewById(R.id.timeOutNumber);
-
+                linear_UnNumber = (LinearLayout) itemView.findViewById(R.id.linear_UnNumber);
 
             }
 

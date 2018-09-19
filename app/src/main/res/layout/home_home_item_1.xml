@@ -20,8 +20,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/proName"
@@ -46,84 +46,92 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/img"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@mipmap/ic_launcher_round" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:orientation="vertical">
+                    android:id="@+id/linear_UnNumber"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/UnNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:text="5"
-                        android:textColor="#fff"
-                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_notifications" />
+                        android:layout_marginLeft="50dp"
+                        android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/UnNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="未完成數"
+                            android:layout_gravity="right"
+                            android:text="5"
                             android:textColor="#fff"
-                            android:textSize="15dp" />
+                            android:textSize="30dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_notifications" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="未完成數"
+                                android:textColor="#fff"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
                     </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/timeOutNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:text="3"
-                        android:textColor="#fff"
-                        android:textSize="30dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_report_problem" />
+                        android:layout_marginLeft="25dp"
+                        android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/timeOutNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="逾時數"
+                            android:layout_gravity="right"
+                            android:text="3"
                             android:textColor="#fff"
-                            android:textSize="15dp" />
+                            android:textSize="30dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_report_problem" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="逾時數"
+                                android:textColor="#fff"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
                     </LinearLayout>
 
-
                 </LinearLayout>
-
             </LinearLayout>
-
 
         </LinearLayout>
 

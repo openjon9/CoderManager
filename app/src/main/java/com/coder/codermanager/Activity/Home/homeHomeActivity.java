@@ -54,7 +54,7 @@ public class homeHomeActivity extends AppCompatActivity {
     private void initData() {
         mlist = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
-            mlist.add(new homeHomeData());
+            mlist.add(new homeHomeData(String.valueOf(i)));
         }
     }
 

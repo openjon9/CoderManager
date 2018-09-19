@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.coder.codermanager.Adapter.clentListAdapter;
 import com.coder.codermanager.Adapter.contactPersonListAdapter;
@@ -63,6 +65,7 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
     private ArrayAdapter<String> contact_person_select_spinnerAdapter;
     private ArrayAdapter<String> contact_person_company_spinnerAdapter;
     private ArrayAdapter<String> contact_person_time_spinnerAdapter;
+    private ImageView client_person_add;
 
     public ContentFragment_2() {
         // Required empty public constructor
@@ -76,8 +79,9 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
         switch (mType) {
             case 0:
                 viewContent = inflater.inflate(R.layout.activity_client_client, container, false);
@@ -124,6 +128,8 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
                 image_up = (ImageView) viewContent.findViewById(R.id.image_up);
                 expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) viewContent.findViewById(R.id.expandableLayout);//伸縮
                 contact_person_recyclerview = (RecyclerView) viewContent.findViewById(R.id.contact_person_recyclerview);
+
+                client_person_add=(ImageView)viewContent.findViewById(R.id.client_person_add);
                 break;
         }
     }
@@ -212,6 +218,17 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
     }
 
     private void click_2() {
+
+        client_person_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View mview = LayoutInflater.from(getContext()).inflate(R.layout.add_client_person, null);
+                new AlertDialog.Builder(getContext())
+                        .setView(mview)
+                        .show();
+
+            }
+        });
 
         text_client_contact_person_1.setOnClickListener(new View.OnClickListener() {
             @Override

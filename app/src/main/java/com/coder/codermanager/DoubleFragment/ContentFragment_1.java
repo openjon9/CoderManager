@@ -3,6 +3,7 @@ package com.coder.codermanager.DoubleFragment;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -15,9 +16,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.coder.codermanager.Activity.Pro.proTodoActivity;
 import com.coder.codermanager.Adapter.homeHomeListAdapter;
 import com.coder.codermanager.Adapter.homePendingTestListAdapter;
 import com.coder.codermanager.Adapter.homePmListAdapter;
@@ -78,6 +81,7 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
     private homePendingTestListAdapter pending__test_adapter;
 
 
+
     public ContentFragment_1() {
         // Required empty public constructor
     }
@@ -91,7 +95,7 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //布局文件中只有一个居中的TextView
+
 
         switch (mType) {
             case 0:
@@ -134,11 +138,21 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
         return viewContent;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+
+
+
+    }
+
     private void findview(int mType, View viewContent) {
         switch (mType) {
             case 0:
                 homeRecyclerView = (RecyclerView) viewContent.findViewById(R.id.homeRecyclerView);
                 down_image = (ImageView) viewContent.findViewById(R.id.down_image);
+
                 break;
             case 1:
                 image_up = (ImageView) viewContent.findViewById(R.id.image_up);
@@ -161,7 +175,7 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
                 home_pm_recyclerview = (RecyclerView) viewContent.findViewById(R.id.home_pm_recyclerview);
                 break;
             case 3:
-                pending_test_recyclerview = (RecyclerView)viewContent.findViewById(R.id.pending_test_recyclerview);
+                pending_test_recyclerview = (RecyclerView) viewContent.findViewById(R.id.pending_test_recyclerview);
                 break;
 
         }
@@ -202,7 +216,7 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
     private void initEvent(int mType) {
         switch (mType) {
             case 0:
-                click1();
+               // click1();
                 break;
             case 1:
                 click2();
@@ -223,7 +237,7 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
             case 0:
                 mlist = new ArrayList<>();
                 for (int i = 0; i < 9; i++) {
-                    mlist.add(new homeHomeData());
+                    mlist.add(new homeHomeData(String.valueOf(i)));
                 }
                 break;
             case 1:
@@ -330,38 +344,40 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
         });
 
 
-        image_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isopen) {
-                    isopen = false;
-                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_downward));
-                    expandableLayout.toggle();
-                } else {
-                    isopen = true;
-                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_upward));
-                    expandableLayout.toggle();
+//        image_up.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (isopen) {
+//                    isopen = false;
+//                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_downward));
+//                    expandableLayout.toggle();
+//                } else {
+//                    isopen = true;
+//                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_upward));
+//                    expandableLayout.toggle();
+//
+//                }
+//                hideSoft(image_up);
+//            }
+//
+//        });
 
-                }
-                hideSoft(image_up);
-            }
-
-        });
     }
 
     private void click1() {
+
         down_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (home_mAdapter.getItemCount() == 1) {
+                if (home_mAdapter.getItemCount() == 3) {
                     home_mAdapter.addItemNum(mlist.size());
 
                     down_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_upward));
                     home_mAdapter.notifyDataSetChanged();
 
                 } else {
-                    home_mAdapter.addItemNum(1);
+                    home_mAdapter.addItemNum(3);
                     down_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_downward));
 
                     home_mAdapter.notifyDataSetChanged();
