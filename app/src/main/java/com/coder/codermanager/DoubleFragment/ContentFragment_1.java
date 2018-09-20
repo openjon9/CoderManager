@@ -344,23 +344,23 @@ public class ContentFragment_1 extends Fragment implements windowSoftInputModeIn
         });
 
 
-//        image_up.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (isopen) {
-//                    isopen = false;
-//                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_downward));
-//                    expandableLayout.toggle();
-//                } else {
-//                    isopen = true;
-//                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_upward));
-//                    expandableLayout.toggle();
-//
-//                }
-//                hideSoft(image_up);
-//            }
-//
-//        });
+        image_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isopen) {
+                    isopen = false;
+                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_downward));
+                    expandableLayout.toggle();
+                } else {
+                    isopen = true;
+                    image_up.setImageDrawable(getResources().getDrawable(R.drawable.ic_arrow_upward));
+                    expandableLayout.toggle();
+
+                }
+                hideSoft(image_up);
+            }
+
+        });
 
     }
 

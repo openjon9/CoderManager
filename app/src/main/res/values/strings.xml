@@ -236,6 +236,37 @@
         <item>最後修改時間</item>
     </string-array>
 
+    /*************add*************/
+
+    <string-array name="add_client_person_select">
+        <item>請選擇</item>
+        <item>p1</item>
+        <item>p2</item>
+        <item>p3</item>
+    </string-array>
+
+    <string-array name="add_pro_todo_select_1">
+        <item>請選擇</item>
+        <item>p1</item>
+        <item>p2</item>
+        <item>p3</item>
+    </string-array>
+
+    <string-array name="pro_text_dialog">
+        <item>p1</item>
+        <item>p2</item>
+        <item>p3</item>
+        <item>p4</item>
+        <item>p5</item>
+        <item>p6</item>
+        <item>p7</item>
+        <item>p8</item>
+        <item>p9</item>
+        <item>p10</item>
+
+    </string-array>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

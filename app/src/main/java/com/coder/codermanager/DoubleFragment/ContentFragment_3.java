@@ -1,23 +1,34 @@
 package com.coder.codermanager.DoubleFragment;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.coder.codermanager.Adapter.proProjectListAdapter;
 import com.coder.codermanager.Adapter.proTodoListAdapter;
@@ -32,6 +43,7 @@ import com.coder.codermanager.R;
 import net.cachapa.expandablelayout.ExpandableLinearLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Rey on 2018/9/18.
@@ -71,13 +83,26 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
     private ArrayAdapter<String> pro_todo_project_spinnerAdapter;
     private ArrayAdapter<String> pro_todo_type_spinnerAdapter;
     private ArrayAdapter<String> pro_todo_priority_spinnerAdapter;
-    private TextView text_pro_work_1,text_pro_work_2;
-    private Spinner pro_work_selete,pro_work_time;
+    private TextView text_pro_work_1, text_pro_work_2;
+    private Spinner pro_work_selete, pro_work_time;
     private RecyclerView pro_work_recyclerview;
     private ArrayList<proWorkData> myDataset_proWork;
     private proWorkListAdapter pro_work_Adapter;
     private ArrayAdapter<String> pro_work_selete_spinnerAdapter;
     private ArrayAdapter<String> pro_work_time_spinnerAdapter;
+    private ImageView pro_todo_add;
+    private RadioGroup rg0, rg1, rg2;
+    private boolean isSelect = false;
+    private RadioButton rb1, rb2, rb3, rb4, rb5, rb6;
+    private CheckBox cb_0, cb_1, cb_2, cb_3, cb_4, cb_5, cb_6;
+    private RadioButton rb0_1, rb0_2, rb0_3, rb0_4;
+    private TextView pro_principal_add, pro_testUser_add;
+    private TextView startTime_add, esfinishTime_add, compleTime_add;
+    private Button btn_yes, btn_no;
+    private AlertDialog add_dialog;
+    private String[] array;
+    private AlertDialog dialog;
+
 
     public ContentFragment_3() {
     }
@@ -151,6 +176,7 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
                 pro_todo_priority = (Spinner) viewContent.findViewById(R.id.pro_todo_priority);
 
                 image_up = (ImageView) viewContent.findViewById(R.id.image_up);
+                pro_todo_add = (ImageView) viewContent.findViewById(R.id.pro_todo_add);
                 pro_todo_recyclerview = (RecyclerView) viewContent.findViewById(R.id.pro_todo_recyclerview);
 
                 expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) viewContent.findViewById(R.id.expandableLayout);//伸縮
@@ -220,7 +246,7 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
                 pro_work_Adapter = new proWorkListAdapter(getContext(), myDataset_proWork);
 
                 //方向一定要設才有效果
-                 layoutManager = new LinearLayoutManager(getContext());
+                layoutManager = new LinearLayoutManager(getContext());
                 layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 pro_work_recyclerview.setLayoutManager(layoutManager);
 
@@ -358,7 +384,84 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
         });
     }
 
+    private String TAG = "RaButton";
+
     private void click_2() {
+
+        pro_todo_add.setOnClickListener(new View.OnClickListener() {
+            public ArrayAdapter<String> add_pro_todo_select_1_spinnerAdapter;
+            public Spinner add_pro_todo_select_1;
+
+            @Override
+            public void onClick(View view) {
+
+                View mview = LayoutInflater.from(getContext()).inflate(R.layout.add_pro_todo, null);
+                btn_yes = (Button) mview.findViewById(R.id.btn_yes);
+                btn_no = (Button) mview.findViewById(R.id.btn_no);
+
+                pro_principal_add = (TextView) mview.findViewById(R.id.pro_principal_add);
+                pro_testUser_add = (TextView) mview.findViewById(R.id.pro_testUser_add);
+
+                add_pro_todo_select_1 = (Spinner) mview.findViewById(R.id.add_pro_todo_select_1);
+                add_pro_todo_select_1_spinnerAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.add_pro_todo_select_1));
+                add_pro_todo_select_1_spinnerAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
+                add_pro_todo_select_1.setAdapter(add_pro_todo_select_1_spinnerAdapter);
+
+                cb_0 = (CheckBox) mview.findViewById(R.id.cb_0);
+                cb_1 = (CheckBox) mview.findViewById(R.id.cb_1);
+                cb_2 = (CheckBox) mview.findViewById(R.id.cb_2);
+                cb_3 = (CheckBox) mview.findViewById(R.id.cb_3);
+                cb_4 = (CheckBox) mview.findViewById(R.id.cb_4);
+                cb_5 = (CheckBox) mview.findViewById(R.id.cb_5);
+                cb_6 = (CheckBox) mview.findViewById(R.id.cb_6);
+
+                rg0 = (RadioGroup) mview.findViewById(R.id.rg0);
+                rg1 = (RadioGroup) mview.findViewById(R.id.rg1);
+                rg2 = (RadioGroup) mview.findViewById(R.id.rg2);
+
+                rb0_1 = (RadioButton) mview.findViewById(R.id.rb0_1);
+                rb0_2 = (RadioButton) mview.findViewById(R.id.rb0_2);
+                rb0_3 = (RadioButton) mview.findViewById(R.id.rb0_3);
+                rb0_4 = (RadioButton) mview.findViewById(R.id.rb0_4);
+                rb1 = (RadioButton) mview.findViewById(R.id.rb1);
+                rb2 = (RadioButton) mview.findViewById(R.id.rb2);
+                rb3 = (RadioButton) mview.findViewById(R.id.rb3);
+                rb4 = (RadioButton) mview.findViewById(R.id.rb4);
+                rb5 = (RadioButton) mview.findViewById(R.id.rb5);
+                rb6 = (RadioButton) mview.findViewById(R.id.rb6);
+
+                startTime_add = (TextView) mview.findViewById(R.id.startTime_add);
+                esfinishTime_add = (TextView) mview.findViewById(R.id.esfinishTime_add);
+                compleTime_add = (TextView) mview.findViewById(R.id.compleTime_add);
+
+
+                rg0.setOnCheckedChangeListener(new MyRadioGroupListener());
+                rg1.setOnCheckedChangeListener(new MyRadioGroupListener());
+                rg2.setOnCheckedChangeListener(new MyRadioGroupListener());
+
+                cb_0.setOnCheckedChangeListener(new MycheckBoxListener());
+                cb_1.setOnCheckedChangeListener(new MycheckBoxListener());
+                cb_2.setOnCheckedChangeListener(new MycheckBoxListener());
+                cb_3.setOnCheckedChangeListener(new MycheckBoxListener());
+                cb_4.setOnCheckedChangeListener(new MycheckBoxListener());
+                cb_5.setOnCheckedChangeListener(new MycheckBoxListener());
+                cb_6.setOnCheckedChangeListener(new MycheckBoxListener());
+
+                btn_yes.setOnClickListener(new MyClickListener());
+                btn_no.setOnClickListener(new MyClickListener());
+                startTime_add.setOnClickListener(new MyClickListener());
+                esfinishTime_add.setOnClickListener(new MyClickListener());
+                compleTime_add.setOnClickListener(new MyClickListener());
+                pro_principal_add.setOnClickListener(new MyClickListener());
+                pro_testUser_add.setOnClickListener(new MyClickListener());
+
+                add_dialog = new AlertDialog.Builder(getActivity())
+                        .setView(mview)
+                        .show();
+
+            }
+        });
+
         image_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -381,14 +484,8 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
         text_pro_project_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                showDateDialog(text_pro_project_1);
 
-                DatePickerDialog datedialog = new DatePickerDialog(getContext(), android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        text_pro_project_1.setText(year + "-" + (month + 1) + "-" + day);
-                    }
-                }, year, month, day);
-                datedialog.show();
             }
         });
 
@@ -397,13 +494,7 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
             @Override
             public void onClick(View view) {
 
-                DatePickerDialog datedialog = new DatePickerDialog(getContext(), android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        text_pro_project_2.setText(year + "-" + (month + 1) + "-" + day);
-                    }
-                }, year, month, day);
-                datedialog.show();
+                showDateDialog(text_pro_project_2);
             }
         });
 
@@ -461,4 +552,220 @@ public class ContentFragment_3 extends Fragment implements windowSoftInputModeIn
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
+    ArrayList<Integer> principa_list = new ArrayList<>();
+    ArrayList<Integer> testUser_list = new ArrayList<>();
+    boolean[] principa_checkedItems;
+    boolean[] testUser_checkedItems;
+
+    private class MyClickListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            array = getResources().getStringArray(R.array.pro_text_dialog);
+
+            switch (view.getId()) {
+                case R.id.pro_principal_add:
+                    principa_checkedItems = new boolean[array.length];
+                    for (int i = 0; i < principa_list.size(); i++) {  //記錄點過的項目
+                        principa_checkedItems[principa_list.get(i)] = true;
+                    }
+
+                    dialog = new AlertDialog.Builder(getContext())
+                            .setMultiChoiceItems(array, principa_checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
+                                    //  checkedItems[which] = isChecked;
+                                    if (isChecked) {
+                                        principa_list.add(which);
+                                    } else {
+                                        principa_list.remove(Integer.valueOf(which));
+                                    }
+                                }
+                            })
+                            .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int which) {
+                                    StringBuilder stringBuilder = new StringBuilder();
+                                    for (int i = 0; i < principa_checkedItems.length; i++) {
+                                        if (principa_checkedItems[i]) {
+                                            stringBuilder.append(array[i] + "\t");
+                                        }
+                                    }
+                                    pro_principal_add.setText(stringBuilder);
+                                    // Toast.makeText(getActivity(), stringBuilder, Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .setNegativeButton("取消", null)
+                            .show();
+                    break;
+                case R.id.pro_testUser_add:
+                    testUser_checkedItems = new boolean[array.length];
+                    for (int i = 0; i < testUser_list.size(); i++) {  //記錄點過的項目
+                        testUser_checkedItems[testUser_list.get(i)] = true;
+                    }
+
+                    new AlertDialog.Builder(getContext())
+                            .setMultiChoiceItems(array, testUser_checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
+                                    if (isChecked) {
+                                        testUser_list.add(which);
+                                    } else {
+                                        testUser_list.remove(Integer.valueOf(which));
+                                    }
+                                }
+                            })
+                            .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int which) {
+                                    StringBuilder stringBuilder = new StringBuilder();
+                                    for (int i = 0; i < testUser_checkedItems.length; i++) {
+                                        if (testUser_checkedItems[i]) {
+                                            stringBuilder.append(array[i] + "\t");
+                                        }
+                                    }
+                                    pro_testUser_add.setText(stringBuilder);
+                                }
+                            })
+                            .setNegativeButton("取消", null)
+                            .show();
+                    break;
+                case R.id.startTime_add:
+                    showDateDialog(startTime_add);
+                    break;
+                case R.id.esfinishTime_add:
+                    showDateDialog(esfinishTime_add);
+                    break;
+                case R.id.compleTime_add:
+                    showDateDialog(compleTime_add);
+                    break;
+                case R.id.btn_yes: //送出資料 這邊要檢查欄位
+                    add_dialog.dismiss();
+                    break;
+                case R.id.btn_no:
+                    add_dialog.dismiss();
+                    break;
+            }
+        }
+    }
+
+    private class MycheckBoxListener implements CompoundButton.OnCheckedChangeListener {
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            switch (buttonView.getId()) {
+                case R.id.cb_0:
+                    if (cb_0.isChecked()) {
+                        cb_1.setChecked(true);
+                        cb_2.setChecked(true);
+                        cb_3.setChecked(true);
+                        cb_4.setChecked(true);
+                        cb_5.setChecked(true);
+                        cb_6.setChecked(true);
+                    } else {
+                        cb_1.setChecked(false);
+                        cb_2.setChecked(false);
+                        cb_3.setChecked(false);
+                        cb_4.setChecked(false);
+                        cb_5.setChecked(false);
+                        cb_6.setChecked(false);
+                    }
+                    break;
+                case R.id.cb_1:
+
+                    break;
+                case R.id.cb_2:
+
+                    break;
+                case R.id.cb_3:
+
+                    break;
+                case R.id.cb_4:
+
+                    break;
+                case R.id.cb_5:
+
+                    break;
+                case R.id.cb_6:
+
+                    break;
+            }
+
+        }
+    }
+
+    private class MyRadioGroupListener implements RadioGroup.OnCheckedChangeListener {
+
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+            if (!isSelect) {
+                isSelect = true; //2個群組都註冊同樣監聽  只要有變動2個燈會觸發  所以要設一個狀態 只讓點擊的群組觸發
+                switch (radioGroup.getId()) {
+                    case R.id.rg0:
+                        switch (checkedId) {
+                            case R.id.rb0_1:
+                                Toast.makeText(getContext(), rb0_1.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb0_2:
+                                Toast.makeText(getContext(), rb0_2.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb0_3:
+                                Toast.makeText(getContext(), rb0_3.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb0_4:
+                                Toast.makeText(getContext(), rb0_4.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        break;
+                    case R.id.rg1:
+
+                        rg2.clearCheck();
+                        switch (checkedId) {
+                            case R.id.rb1:
+                                Toast.makeText(getContext(), rb1.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb2:
+                                Toast.makeText(getContext(), rb2.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb3:
+                                Toast.makeText(getContext(), rb3.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+
+                        break;
+                    case R.id.rg2:
+
+                        rg1.clearCheck();
+                        switch (checkedId) {
+                            case R.id.rb4:
+                                Toast.makeText(getContext(), rb4.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb5:
+                                Toast.makeText(getContext(), rb5.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.rb6:
+                                Toast.makeText(getContext(), rb6.getText(), Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+
+                        break;
+                }
+                isSelect = false;
+
+            }
+        }
+    }
+
+    private void showDateDialog(final TextView view) {
+        DatePickerDialog datedialog = new DatePickerDialog(getContext(), android.R.style.Theme_DeviceDefault_Dialog_Alert, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                view.setText(year + "-" + (month + 1) + "-" + day);
+            }
+        }, year, month, day);
+        datedialog.show();
+    }
+
 }

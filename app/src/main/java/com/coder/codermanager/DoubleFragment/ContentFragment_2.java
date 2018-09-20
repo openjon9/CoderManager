@@ -14,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -57,8 +59,8 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
     private ArrayAdapter<String> client_time_spinnerAdapter;
     private boolean isopen = false;
 
-    private TextView text_client_contact_person_1,text_client_contact_person_2;
-    private Spinner contact_person_select,contact_person_company,contact_person_time;
+    private TextView text_client_contact_person_1, text_client_contact_person_2;
+    private Spinner contact_person_select, contact_person_company, contact_person_time;
     private RecyclerView contact_person_recyclerview;
     private ArrayList<contactPersonData> myDataset_contactPersonData;
     private contactPersonListAdapter contact_person_Adapter;
@@ -66,6 +68,7 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
     private ArrayAdapter<String> contact_person_company_spinnerAdapter;
     private ArrayAdapter<String> contact_person_time_spinnerAdapter;
     private ImageView client_person_add;
+    private ImageView client_client_add;
 
     public ContentFragment_2() {
         // Required empty public constructor
@@ -115,21 +118,22 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
                 client_time = (Spinner) viewContent.findViewById(R.id.client_time);
 
                 image_up = (ImageView) viewContent.findViewById(R.id.image_up);
+                client_client_add = (ImageView) viewContent.findViewById(R.id.client_client_add);
                 expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) viewContent.findViewById(R.id.expandableLayout);//伸縮
                 client_recyclerview = (RecyclerView) viewContent.findViewById(R.id.client_recyclerview);
                 break;
             case 1:
-                text_client_contact_person_1=(TextView)viewContent.findViewById(R.id.text_client_contact_person_1);
-                text_client_contact_person_2=(TextView)viewContent.findViewById(R.id.text_client_contact_person_2);
+                text_client_contact_person_1 = (TextView) viewContent.findViewById(R.id.text_client_contact_person_1);
+                text_client_contact_person_2 = (TextView) viewContent.findViewById(R.id.text_client_contact_person_2);
 
-                contact_person_select = (Spinner)viewContent. findViewById(R.id.contact_person_select);
+                contact_person_select = (Spinner) viewContent.findViewById(R.id.contact_person_select);
                 contact_person_company = (Spinner) viewContent.findViewById(R.id.contact_person_company);
                 contact_person_time = (Spinner) viewContent.findViewById(R.id.contact_person_time);
                 image_up = (ImageView) viewContent.findViewById(R.id.image_up);
                 expandableLayout = (net.cachapa.expandablelayout.ExpandableLinearLayout) viewContent.findViewById(R.id.expandableLayout);//伸縮
                 contact_person_recyclerview = (RecyclerView) viewContent.findViewById(R.id.contact_person_recyclerview);
 
-                client_person_add=(ImageView)viewContent.findViewById(R.id.client_person_add);
+                client_person_add = (ImageView) viewContent.findViewById(R.id.client_person_add);
                 break;
         }
     }
@@ -220,10 +224,42 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
     private void click_2() {
 
         client_person_add.setOnClickListener(new View.OnClickListener() {
+            public AlertDialog dialog;
+
             @Override
             public void onClick(View view) {
                 View mview = LayoutInflater.from(getContext()).inflate(R.layout.add_client_person, null);
-                new AlertDialog.Builder(getContext())
+                Spinner add_client_person_select = (Spinner) mview.findViewById(R.id.add_client_person_select);
+                ImageView add_img = (ImageView) mview.findViewById(R.id.add_img);
+                Button btn_yes = (Button) mview.findViewById(R.id.btn_yes);
+                Button btn_no = (Button) mview.findViewById(R.id.btn_no);
+                EditText ed_account = (EditText) mview.findViewById(R.id.ed_account);
+                EditText ed_name = (EditText) mview.findViewById(R.id.ed_name);
+                EditText ed_job = (EditText) mview.findViewById(R.id.ed_job); //職稱
+                EditText ed_phone = (EditText) mview.findViewById(R.id.ed_phone); //連絡電話
+                EditText ed_mobliephone = (EditText) mview.findViewById(R.id.ed_mobliephone); //手機
+                EditText ed_email = (EditText) mview.findViewById(R.id.ed_email);
+
+                ArrayAdapter<String> add_client_person_selectAdapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_layout, R.id.text_spinner, getResources().getStringArray(R.array.add_client_person_select));
+                add_client_person_selectAdapter.setDropDownViewResource(R.layout.spinner_down_layout);
+                add_client_person_select.setAdapter(add_client_person_selectAdapter);
+
+
+                btn_yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                btn_no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog = new AlertDialog.Builder(getContext())
                         .setView(mview)
                         .show();
 
@@ -322,6 +358,46 @@ public class ContentFragment_2 extends Fragment implements windowSoftInputModeIn
                 hideSoft(image_up);
             }
 
+        });
+
+        client_client_add.setOnClickListener(new View.OnClickListener() {
+            public AlertDialog dialog;
+
+            @Override
+            public void onClick(View view) {
+
+                View mview = LayoutInflater.from(getContext()).inflate(R.layout.add_client_client, null);
+                ImageView add_img = (ImageView) mview.findViewById(R.id.add_img);
+                EditText ed_name = (EditText) mview.findViewById(R.id.ed_name);
+                EditText ed_Invoice = (EditText) mview.findViewById(R.id.ed_Invoice);
+                EditText ed_TongBian = (EditText) mview.findViewById(R.id.ed_TongBian);
+                EditText ed_phone = (EditText) mview.findViewById(R.id.ed_phone);
+                EditText ed_address = (EditText) mview.findViewById(R.id.ed_address);
+                EditText ed_Uri = (EditText) mview.findViewById(R.id.ed_Uri);
+
+                Button btn_yes = (Button) mview.findViewById(R.id.btn_yes);
+                Button btn_no = (Button) mview.findViewById(R.id.btn_no);
+
+
+                btn_yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                btn_no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog = new AlertDialog.Builder(getContext())
+                        .setView(mview)
+                        .show();
+
+            }
         });
     }
 
